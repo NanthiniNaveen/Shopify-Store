@@ -1,0 +1,12 @@
+<div class="design-filters" data-design-filters hidden>
+  <h2 class="design-filters__heading" id="DesignFilterHeading-{{ section.id }}">Shop by design</h2>
+  <div class="design-filters__options" role="group" aria-labelledby="DesignFilterHeading-{{ section.id }}">
+    {% assign design_filter_keys = 'all,cricket,mountains,beaches,south-indian,animals,chai-coffee,travel,culture,nature,everyday' | split: ',' %}
+    {% assign design_filter_labels = 'All designs,Cricket,Mountains,Beaches & Coast,South Indian,Animals,Chai & Coffee,Travel,Culture,Nature,Everyday' | split: ',' %}
+    {% for filter_key in design_filter_keys %}
+      <button class="design-filter" type="button" data-design-filter="{{ filter_key }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"><span data-design-label>{{ design_filter_labels[forloop.index0] }}</span><span class="design-filter__count" data-design-count></span></button>
+    {% endfor %}
+  </div>
+  <div class="design-filters__status"><p data-design-status role="status" aria-live="polite"></p><button type="button" class="design-filters__clear" data-design-clear hidden>Clear filter</button></div>
+</div>
+<p class="design-empty" data-design-empty hidden>No designs match this filter. Choose All designs to keep exploring.</p>

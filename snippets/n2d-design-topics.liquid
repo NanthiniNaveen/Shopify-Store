@@ -1,0 +1,111 @@
+{% comment %}Product tags design:cricket, design:south-indian, etc. can add topics without code changes.{% endcomment %}
+{%- assign design_handle = product.handle | remove: "-regular" | remove: "-oversized" -%}
+{%- assign design_topics = "" -%}
+{%- case design_handle -%}
+{%- when 'steam-locomotive' -%}{%- assign design_topics = 'mountains|travel|' -%}
+{%- when 'train-wreath' -%}{%- assign design_topics = 'travel|' -%}
+{%- when 'folk-dancer' -%}{%- assign design_topics = 'south-indian|culture|' -%}
+{%- when 'flower-vespa' -%}{%- assign design_topics = 'nature|travel|' -%}
+{%- when 'stadium-nights' -%}{%- assign design_topics = 'cricket|' -%}
+{%- when 'monsoon-chai' -%}{%- assign design_topics = 'chai-coffee|south-indian|nature|' -%}
+{%- when 'gramophone' -%}{%- assign design_topics = 'culture|everyday|' -%}
+{%- when 'crossroads' -%}{%- assign design_topics = 'mountains|travel|' -%}
+{%- when 'desert-routes' -%}{%- assign design_topics = 'mountains|travel|' -%}
+{%- when 'pack-light' -%}{%- assign design_topics = 'travel|nature|' -%}
+{%- when 'beach-bench' -%}{%- assign design_topics = 'beaches|travel|' -%}
+{%- when 'midnight-raiders' -%}{%- assign design_topics = 'everyday|' -%}
+{%- when 'meter-podu' -%}{%- assign design_topics = 'beaches|travel|south-indian|' -%}
+{%- when 'degree-coffee' -%}{%- assign design_topics = 'chai-coffee|south-indian|' -%}
+{%- when 'vetri-pathai' -%}{%- assign design_topics = 'south-indian|nature|animals|' -%}
+{%- when 'low-battery' -%}{%- assign design_topics = 'animals|everyday|' -%}
+{%- when 'no-rush-racing-club' -%}{%- assign design_topics = 'animals|mountains|travel|' -%}
+{%- when 'chai-then-we-talk' -%}{%- assign design_topics = 'chai-coffee|south-indian|culture|' -%}
+{%- when 'full-time-relaxer' -%}{%- assign design_topics = 'animals|' -%}
+{%- when 'kolam' -%}{%- assign design_topics = 'south-indian|culture|' -%}
+{%- when 'marina' -%}{%- assign design_topics = 'beaches|south-indian|nature|' -%}
+{%- when 'northbound' -%}{%- assign design_topics = 'mountains|travel|' -%}
+{%- when 'tidal-geometry' -%}{%- assign design_topics = 'beaches|south-indian|nature|' -%}
+{%- when 'river-grid' -%}{%- assign design_topics = 'nature|south-indian|travel|' -%}
+{%- when 'salt-moon' -%}{%- assign design_topics = 'travel|nature|' -%}
+{%- when 'night-platform' -%}{%- assign design_topics = 'travel|' -%}
+{%- when 'after-rain-ride' -%}{%- assign design_topics = 'travel|nature|' -%}
+{%- when 'floodlit-cricket' -%}{%- assign design_topics = 'cricket|' -%}
+{%- when 'chai-monsoon' -%}{%- assign design_topics = 'mountains|chai-coffee|south-indian|nature|' -%}
+{%- when 'gully-hour' -%}{%- assign design_topics = 'cricket|culture|' -%}
+{%- when 'seam-and-willow' -%}{%- assign design_topics = 'cricket|' -%}
+{%- endcase -%}
+{%- assign design_text = product.title | append: ' ' | append: product.handle | downcase -%}
+{%- assign design_words = 'cricket,sachin,dhoni,virat,rohit,bumrah,seam-and-willow' | split: ',' -%}
+{%- for design_word in design_words -%}
+{%- if design_text contains design_word -%}
+{%- assign design_topics = design_topics | append: 'cricket|' -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- assign design_words = 'mountain,himalay,valley,alpine' | split: ',' -%}
+{%- for design_word in design_words -%}
+{%- if design_text contains design_word -%}
+{%- assign design_topics = design_topics | append: 'mountains|' -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- assign design_words = 'beach,coastal,ocean,sail-away,marina' | split: ',' -%}
+{%- for design_word in design_words -%}
+{%- if design_text contains design_word -%}
+{%- assign design_topics = design_topics | append: 'beaches|' -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- assign design_words = 'kolam,filter-coffee,degree-coffee,kathakali,kerala,chennai,tamil,madurai,idli,dosa' | split: ',' -%}
+{%- for design_word in design_words -%}
+{%- if design_text contains design_word -%}
+{%- assign design_topics = design_topics | append: 'south-indian|' -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- assign design_words = 'koi,panda,cat,fox,heron,dragonfly,koala,bunny,caterpillar,elephant,hippo,tortoise,otter,penguin,lamb,puppy,duck,dino' | split: ',' -%}
+{%- for design_word in design_words -%}
+{%- if design_text contains design_word -%}
+{%- assign design_topics = design_topics | append: 'animals|' -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- assign design_words = 'coffee,chai,tea-valley' | split: ',' -%}
+{%- for design_word in design_words -%}
+{%- if design_text contains design_word -%}
+{%- assign design_topics = design_topics | append: 'chai-coffee|' -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- assign design_words = 'travel,journey,route,train,bicycle,vespa' | split: ',' -%}
+{%- for design_word in design_words -%}
+{%- if design_text contains design_word -%}
+{%- assign design_topics = design_topics | append: 'travel|' -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- assign design_words = 'garden,meadow,fern,petal,bloom,rain,lotus,flower,forest' | split: ',' -%}
+{%- for design_word in design_words -%}
+{%- if design_text contains design_word -%}
+{%- assign design_topics = design_topics | append: 'nature|' -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- assign design_words = 'kolam,kathakali,folk-dancer' | split: ',' -%}
+{%- for design_word in design_words -%}
+{%- if design_text contains design_word -%}
+{%- assign design_topics = design_topics | append: 'culture|' -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- assign allowed_topics = 'cricket,mountains,beaches,south-indian,animals,chai-coffee,travel,culture,nature,everyday' | split: ',' -%}
+{%- for design_tag in product.tags -%}
+{%- assign topic_tag = design_tag | handleize -%}
+{%- for topic_key in allowed_topics -%}
+{%- assign prefixed_topic = 'design-' | append: topic_key -%}
+{%- if topic_tag == topic_key or topic_tag == prefixed_topic -%}
+{%- assign design_topics = design_topics | append: topic_key | append: '|' -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endfor -%}
+{%- if design_topics == blank -%}everyday{%- else -%}{{- design_topics -}}{%- endif -%}

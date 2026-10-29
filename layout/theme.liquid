@@ -20,6 +20,8 @@
   <link rel="icon" type="image/svg+xml" sizes="any" href="{{ 'n2d-circle-ivory.svg' | asset_url }}">
   {{ content_for_header }}
   {{ 'n2d.css' | asset_url | stylesheet_tag }}<link rel="stylesheet" href="{{ 'garments.css' | asset_url }}&amp;n2d=colour-controls-v3">{{ 'women.css' | asset_url | stylesheet_tag }}{{ 'women-future.css' | asset_url | stylesheet_tag }}
+  {{ 'n2d-storefront.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'n2d-storefront.js' | asset_url }}" defer></script>
   <style>:root{--ink:{{ settings.background }};--ivory:{{ settings.foreground }};--gold:{{ settings.accent }}}</style>
   <script src="{{ 'garments.js' | asset_url }}" defer></script><script src="{{ 'gallery.js' | asset_url }}" defer></script><script src="{{ 'catalogue.js' | asset_url }}" defer></script><script src="{{ 'n2d.js' | asset_url }}&amp;n2d=colour-controls-v3" defer></script>
 </head>

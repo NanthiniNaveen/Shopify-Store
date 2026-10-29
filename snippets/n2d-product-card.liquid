@@ -1,4 +1,5 @@
-<article class="art-card">
+{% capture design_topics %}{% render 'n2d-design-topics', product: product %}{% endcapture %}
+<article class="art-card" data-design-topics="{{ design_topics | strip | escape }}">
   <a href="{{ product.url }}">
     <div class="art-card-image photo">
       {% capture crop_card_image %}{% render 'n2d-crop-card-image', handle: product.handle %}{% endcapture %}

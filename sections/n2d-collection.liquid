@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" data-design-collection>
   <header class="page-heading">
     <div class="eyebrow">Find your story</div>
     <h1>{{ collection.title | escape }}</h1>
@@ -21,6 +21,8 @@
       </label>
     {% endif %}
   </div>
+
+  {% render 'n2d-design-filters' %}
 
   {% paginate collection.products by 250 %}
     {% if collection.products_count > 0 %}
@@ -90,7 +92,7 @@
         </section>
         {% endif %}
 
-        <section class="gender-collection gender-collection--women" {% if men_count > 0 %}aria-labelledby="women-collection-title"{% endif %}>
+        <section class="gender-collection gender-collection--women{% if men_count == 0 %} gender-collection--only{% endif %}" {% if men_count > 0 %}aria-labelledby="women-collection-title"{% endif %}>
           {% if men_count > 0 %}<h2 id="women-collection-title">Women’s collection</h2>{% endif %}
           <div class="art-grid">
             {% for product in collection.products %}
