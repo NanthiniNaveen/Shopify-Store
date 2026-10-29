@@ -16,7 +16,8 @@
 .diwali-fit-pair--men { order: 2; }
 .diwali-feature--women { order: 3; }
 .diwali-feature--family { order: 4; }
-.diwali-closing { order: 5; }
+.diwali-feature--kids { order: 5; }
+.diwali-closing { order: 6; }
 
 .diwali-sale ::selection {
   background: var(--diwali-gold);
@@ -1124,7 +1125,7 @@
     bottom: 12px;
     min-height: 58px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     padding: 0;
     border: 1px solid rgba(242, 234, 220, 0.24);
     background: #c8b186;

@@ -162,6 +162,11 @@
               <em>Build a family set</em>
             </span>
           </a>
+          <a class="diwali-carousel__slide" href="{{ routes.collections_url }}/toddler" data-carousel-slide aria-hidden="true" tabindex="-1">
+            <img src="{{ 'kids-td01-model.webp' | asset_url }}" width="1122" height="1402" loading="eager" alt="Child wearing the Mango March toddler T-shirt">
+            <span class="diwali-carousel__shade"></span>
+            <span class="diwali-carousel__copy"><strong>Little tees. Big adventures.</strong><span>Playful prints for little explorers.</span><em>Shop kids</em></span>
+          </a>
         </div>
 
         <button
@@ -186,6 +191,7 @@
             <button class="is-active" type="button" data-carousel-dot aria-current="true" aria-label="Show Men"></button>
             <button type="button" data-carousel-dot aria-current="false" aria-label="Show Women"></button>
             <button type="button" data-carousel-dot aria-current="false" aria-label="Show Family"></button>
+            <button type="button" data-carousel-dot aria-current="false" aria-label="Show Kids"></button>
           </div>
           <button type="button" data-carousel-next aria-label="Next collection">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
@@ -307,6 +313,19 @@
     </div>
   </section>
 
+  <section class="diwali-feature diwali-feature--kids" aria-labelledby="diwali-kids-title">
+    <div class="diwali-shell diwali-feature__grid">
+      <div class="diwali-feature__copy">
+        <h2 id="diwali-kids-title">Little tees.<br>Big adventures.</h2>
+        <p>Playful characters, colourful stories and everyday favourites for little explorers. Find their next favourite toddler tee.</p>
+        <a class="button diwali-button" href="{{ routes.collections_url }}/toddler">Shop kids' T-shirts</a>
+      </div>
+      <a class="diwali-feature__media" href="{{ routes.collections_url }}/toddler" aria-label="Shop the N2D kids collection">
+        <img src="{{ 'kids-td30-model.webp' | asset_url }}" width="1122" height="1402" loading="lazy" alt="Child wearing the Sun Sprout Friends toddler T-shirt">
+      </a>
+    </div>
+  </section>
+
   <section class="diwali-closing" aria-labelledby="diwali-closing-title">
     <div class="diwali-shell diwali-closing__inner">
       <div>
@@ -317,6 +336,7 @@
         <a class="button diwali-button" href="/pages/mens-collection">Shop men's collection</a>
         <a class="button diwali-button" href="/pages/womens-collection">Shop women's collection</a>
         <a class="button diwali-button" href="/pages/family-combos">Shop family sets</a>
+        <a class="button diwali-button" href="{{ routes.collections_url }}/toddler">Shop kids</a>
       </div>
     </div>
   </section>
@@ -325,6 +345,7 @@
     <a href="/pages/mens-collection">Men</a>
     <a href="/pages/womens-collection">Women</a>
     <a href="/pages/family-combos">Family</a>
+    <a href="{{ routes.collections_url }}/toddler">Kids</a>
   </nav>
 </div>
 

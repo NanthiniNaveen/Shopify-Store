@@ -15,6 +15,10 @@
         {% capture womens_card_image %}{% render 'n2d-womens-card-image', handle: product.handle %}{% endcapture %}
         {% assign card_model_image = womens_card_image | strip %}
       {% endif %}
+      {% if card_model_image == blank %}
+        {% capture kids_card_image %}{% render 'n2d-kids-card-image', handle: product.handle %}{% endcapture %}
+        {% assign card_model_image = kids_card_image | strip %}
+      {% endif %}
       {% if card_model_image != blank %}
         <img src="{{ card_model_image }}" alt="Model wearing {{ product.title | escape }}" loading="lazy" width="1122" height="1402">
       {% else %}
