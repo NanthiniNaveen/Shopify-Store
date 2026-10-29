@@ -1,0 +1,9 @@
+{%- capture palette_enabled -%}{%- render 'n2d-printrove-regular-enabled', handle: product.handle -%}{%- endcapture -%}
+{%- assign palette_enabled = palette_enabled | strip -%}
+{%- if palette_enabled == 'true' -%}
+  {%- assign palette_names = 'White|Black|Royal Blue|Red|Golden Yellow|Melange Grey|Charcoal Grey|Sky Blue|Navy Blue|Olive Green|Light Pink|Coffee Brown|Mustard Yellow|Liril Green|Butter Yellow|Maroon|Orange|Iris Lavender|Burgundy|Almond|Silver Frost|Smoke Blue|Chocolate Brown|Surf Blue|Pastel Dusty|Ivory|Purple' | split: '|' -%}
+  {%- for photo_colour in palette_names -%}
+    {%- capture photo_url -%}{%- render 'n2d-regular-colour-image', handle: product.handle, colour: photo_colour -%}{%- endcapture -%}
+    {{- photo_colour | json -}}:{{- photo_url | strip | json -}}{%- unless forloop.last -%},{%- endunless -%}
+  {%- endfor -%}
+{%- endif -%}

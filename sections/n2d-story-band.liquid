@@ -1,0 +1,27 @@
+<section class="story-band"><div class="copy"><div class="eyebrow">A little closer</div><h2>Details that stay with you.</h2><p>Expressive artwork, two silhouettes. Our Regular fit carries the story on the front; Oversized carries it on the back.</p><p>From a steaming cup of chai to a night on the coast, N2D finds its stories in everyday India.</p><a class="line-link" href="{{ settings.story_url | default: '/pages/our-story' }}">Our story <span class="arrow">↗</span></a></div><figure>{% if section.settings.image %}{{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: section.settings.image_alt }}{% else %}<img src="{{ 'fabric-detail.webp' | asset_url }}" loading="lazy" alt="Fabric texture visual reference" width="1536" height="1024">{% endif %}</figure></section>
+{% schema %}{
+  "name": "Detail and story",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Fabric detail image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image description",
+      "default": "N2D fabric detail"
+    },
+    {
+      "type": "text",
+      "id": "image_caption",
+      "label": "Image caption"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Detail and story"
+    }
+  ]
+}{% endschema %}

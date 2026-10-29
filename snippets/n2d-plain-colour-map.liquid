@@ -1,0 +1,31 @@
+{% assign plain_handles = 'mens-plain-regular,mens-plain-oversized,womens-plain-regular' | split: ',' %}
+{% assign orbit_handles = 'orbit-king-regular,orbit-queen-regular,orbit-prince-regular,orbit-princess-regular' | split: ',' %}
+<script type="application/json" id="N2DPlainColourImages">
+{
+  {% for handle in plain_handles %}
+    {% assign plain_product = all_products[handle] %}
+    "{{ handle }}": {
+      {% assign colour_option = plain_product.options_by_name['Colour'] %}
+      {% for colour in colour_option.values %}
+        {% capture colour_asset %}plain-{{ handle }}-{{ colour | handleize }}.webp{% endcapture %}
+        {{ colour | json }}: {{ colour_asset | asset_url | json }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %},
+  {% for handle in orbit_handles %}
+    {% assign orbit_product = all_products[handle] %}
+    "{{ handle }}": {
+      {% assign colour_option = orbit_product.options_by_name['Colour'] %}
+      {% for colour in colour_option.values %}
+        {% assign cslug = colour | handleize %}
+        {% if cslug == 'navy' %}
+          {% capture colour_asset %}family-orbit-portrait.webp{% endcapture %}
+        {% else %}
+          {% capture colour_asset %}family-orbit-model-{{ cslug }}.webp{% endcapture %}
+        {% endif %}
+        {{ colour | json }}: {{ colour_asset | asset_url | json }}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+}
+</script>

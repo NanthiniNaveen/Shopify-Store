@@ -1,0 +1,150 @@
+/* Photographic garment previews. Artwork sources remain unchanged. */
+.brand img.brand-circle{display:block;width:64px;height:64px;max-width:64px!important;max-height:64px!important;object-fit:contain}
+.footer-brand .brand img.brand-circle,.password-copy .brand img.brand-circle{width:72px;height:72px;max-width:72px!important;max-height:72px!important}
+@media(max-width:720px){.site-header .brand img.brand-circle,.mobile-menu-top .brand img.brand-circle{width:48px;height:48px;max-width:48px!important;max-height:48px!important}}
+.garment-mockup{width:100%;min-width:0}
+.garment-stage{display:block;width:100%;aspect-ratio:1122/1402;position:relative;border:0;padding:0;margin:0;background:#ece8df;overflow:hidden;color:inherit;isolation:isolate}
+.garment-photograph{display:block;width:100%;height:100%;padding:6% 5%;filter:drop-shadow(0 10px 8px #0002)}
+.garment-stage svg image{pointer-events:none}
+.garment-finished-photo{position:absolute!important;inset:0;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:contain!important;transform:none!important;filter:none!important}
+.garment-controls{padding:13px 0 0}
+.garment-views,.garment-modes,.studio-fit-controls{display:flex;flex-wrap:wrap;gap:6px}
+.garment-views[hidden]{display:none}
+.garment-views button,.garment-modes button,.studio-fit-controls button{background:transparent;color:var(--ivory);border:1px solid #ffffff26;font-size:14px;min-height:40px;padding:8px 14px}
+.garment-views button[aria-pressed=true],.garment-modes button[aria-pressed=true],.studio-fit-controls button[aria-pressed=true]{border-color:var(--gold);background:#c8b18612}
+.garment-modes button:disabled{opacity:.4;cursor:default}
+.garment-modes{margin-bottom:8px}
+.product-garment{min-width:0}
+.product-picture-gallery{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;align-items:start;min-width:0;width:100%}
+.product-thumbnail-rail{display:flex;flex-direction:column;gap:9px}
+.product-picture-thumb{background:transparent;border:1px solid var(--line);padding:3px;color:var(--muted);width:76px;flex-shrink:0}
+.product-picture-thumb[aria-pressed=true]{border-color:var(--gold);color:var(--ivory)}
+.product-picture-thumb:disabled{opacity:.4}
+.gallery-thumb-picture{display:block;position:relative;width:100%;aspect-ratio:1;overflow:hidden;background:#ece8df}
+.gallery-thumb-label{display:block;font-size:12px;line-height:1.25;padding:5px 1px}
+.garment-print-zoom{padding:0!important;filter:none!important}
+[data-gallery-mounted]>.garment-controls .garment-modes,[data-gallery-mounted]>.garment-controls .garment-views{display:none}
+@media(max-width:720px){.product-picture-gallery{display:flex;flex-direction:column;gap:12px}.product-thumbnail-rail{flex-direction:row;width:100%;min-width:0;max-width:100%;overflow-x:auto;padding:2px 0 6px}.product-picture-thumb{width:69px}.product-picture-gallery>.garment-stage{width:100%}}
+.garment-side-label{font-size:14px!important;line-height:1.5;margin:6px 0 9px!important;color:var(--muted)}
+.studio-fit-controls{margin:0 0 24px}
+.garment-pending{display:flex;align-items:center;justify-content:center;height:100%;padding:30px;text-align:center;color:#514d43}
+.garment-swatches{display:flex;flex-wrap:wrap;gap:3px;align-items:center}
+.colour-swatch{background:transparent;border:1px solid transparent;border-radius:0;width:34px;height:38px;padding:7px;display:inline-flex;justify-content:center;align-items:center;min-width:34px;flex-shrink:0}
+.colour-swatch span{display:block;width:20px;height:20px;background:var(--swatch);border:1px solid #ffffff55;border-radius:50%;flex-shrink:0}
+.colour-swatch[aria-pressed=true]{border-color:var(--gold)}
+.garment-colour-label{font-size:14px!important;color:var(--muted);margin:4px 0 0!important;line-height:1.4}
+.garment-card h3{margin-top:15px}
+.hero-art>.garment-mockup{max-width:490px}
+.hero-art .garment-stage,.password-art .garment-stage{background:#e8e4da}
+.hero-art .garment-controls,.password-art .garment-controls{display:flex;align-items:center;gap:18px;justify-content:center}
+.hero-art .garment-colour-label,.password-art .garment-colour-label{color:var(--ivory)}
+.hero-art .garment-side-label,.password-art .garment-side-label{color:var(--ivory)}
+.product-garment .garment-stage{aspect-ratio:1122/1402}
+.product-garment .garment-controls{padding:15px 0}
+.product-garment .garment-colour-label{font-size:15px!important}
+.product-garment .colour-swatch{width:44px;height:44px;padding:10px}
+.garment-modal{max-width:660px;width:calc(100% - 30px)}
+.garment-modal h2{font-size:32px;margin-bottom:15px}
+.garment-modal .garment-stage{aspect-ratio:1122/1402;max-height:none;max-width:420px;margin:auto}
+.garment-modal .garment-controls{max-width:420px;margin:0 auto 18px}
+.garment-modal .product-picture-gallery>.garment-stage{max-width:none;margin:0}
+.native-option{margin:20px 0}
+.native-option-label{font-size:15px;display:block;margin-bottom:10px;color:var(--muted)}
+.native-colours{display:flex;flex-wrap:wrap;gap:8px}
+.native-colour{padding:10px 12px;border:1px solid var(--line);background:transparent;display:flex;align-items:center;gap:9px;font-size:14px;min-height:44px}
+.native-colour[aria-pressed=true]{border-color:var(--gold)}
+.native-colour i{width:19px;height:19px;border-radius:50%;background:var(--option-colour,transparent);border:1px solid #ffffff66;display:block}
+.native-size{width:100%;max-width:240px}
+.native-sizes{display:flex;flex-wrap:wrap;gap:8px}
+.native-size-btn{padding:10px 16px;border:1px solid var(--line);background:transparent;font-size:14px;min-height:44px;min-width:48px;color:var(--text);cursor:pointer}
+.native-size-btn:hover{border-color:var(--muted)}
+.native-size-btn[aria-pressed=true]{border-color:var(--gold);color:var(--gold)}
+.family-buy-row{margin-top:14px}
+.family-buy .button{display:block;width:100%;margin-top:14px;text-align:center}
+.button-ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+.button-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.variant-image-note{font-size:14px;color:var(--muted);margin-top:13px}
+.art-card .garment-stage img{transition:none;transform:none!important}
+.art-card .garment-stage{border:1px solid #ffffff0c}
+.garment-stage:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}
+.password-art>.garment-mockup{max-width:490px}
+@media(max-width:720px){
+ .hero-art{min-height:0;padding:16px 20px 64px}
+ .hero-art>.garment-mockup{max-width:330px}
+ .hero-art .garment-controls{gap:12px}
+ .hero-art .garment-colour-label{font-size:14px!important}
+ .garment-controls{padding-top:10px}
+ .garment-swatches{gap:2px}
+ .colour-swatch{width:32px;height:40px;min-width:32px;padding:6px}
+ .art-grid{gap:28px 14px}
+ .art-card h3{font-size:16px}
+ .garment-colour-label{font-size:14px!important}
+ .garment-modal{padding:20px}
+ .garment-modal .garment-stage{aspect-ratio:1122/1402;width:100%}
+ .garment-photograph{padding:6% 4%}
+ .native-colour{min-height:44px}
+ .breadcrumbs,.footer-bottom{font-size:14px}
+}
+
+.garment-finished-photo.model-worn-photo{object-fit:cover!important;object-position:center 40%!important}
+
+@media(max-width:720px){.garment-swatches{column-gap:3px;row-gap:4px}.art-card .colour-swatch{width:34px;min-width:34px;height:40px}.product-garment .colour-swatch{width:44px;min-width:44px;height:44px}.hero-art .garment-controls,.password-art .garment-controls{flex-direction:column;gap:8px}.hero-art .garment-swatches,.password-art .garment-swatches{justify-content:center}}
+
+.hero-art .garment-controls,.password-art .garment-controls{flex-direction:column;gap:8px}.hero-art .garment-swatches,.password-art .garment-swatches{max-width:240px;justify-content:center}
+
+.plain-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;max-width:900px;margin:auto}.family-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}.additional-section{border-top:1px solid var(--line)}.family-stage{display:block;position:relative;aspect-ratio:4/5;overflow:hidden;background:#ece8df}.family-portrait{display:block;width:100%!important;height:100%!important;object-fit:cover!important;transform:none!important}.family-tee-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;align-content:center;gap:6px;height:100%;padding:12px}.family-tee-member{margin:0;min-width:0}.family-tee-member figcaption{font-size:14px;color:#37352e;text-align:center;line-height:1.25;padding:3px 0}.family-tee-member .garment-stage{background:transparent}.family-child-layout{width:80%;justify-self:center}.family-tee-grid:has(>figure:nth-child(3):last-child)>figure:last-child{grid-column:1/-1;width:38%}.family-controls{padding-top:12px}.family-controls .garment-modes{flex-wrap:wrap}.family-controls .garment-colour-label{margin-top:6px!important}.family-controls .image-caption{font-size:13px;margin:8px 0 0}.family-preview-card .family-controls{min-height:140px}.family-product-grid .family-tee-member .garment-photograph{padding:0 3%}.family-product-grid .family-tee-grid{gap:12px;padding:20px}.family-product-grid .family-stage{max-height:760px}.family-product-grid .colour-swatch{width:44px;min-width:44px;height:44px}.family-card .family-stage:hover .family-portrait{transform:none!important}
+@media(max-width:1150px){.site-header .nav-links{display:none}.site-header .menu-toggle{display:inline-flex}.site-header>.brand{position:absolute;left:50%;transform:translateX(-50%)}}
+@media(max-width:720px){.plain-grid{gap:26px 14px}.family-card-grid{grid-template-columns:1fr;gap:36px}.family-card-grid .family-stage{max-width:440px;margin:auto}.family-card-grid .family-preview{max-width:440px;margin:auto}.family-preview-card .family-controls{min-height:0}.family-product-grid .family-stage{width:100%}.family-tee-grid{gap:6px;padding:10px}.family-tee-member figcaption{font-size:13px}.family-product-grid .family-tee-grid{gap:8px;padding:10px}.mobile-menu nav{gap:18px}.mobile-menu{overflow-y:auto}.mobile-menu-top{margin-bottom:32px}.mobile-menu-bottom{margin-top:32px}}
+.family-include{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;margin-bottom:8px}
+.family-include input{accent-color:var(--gold);width:15px;height:15px;cursor:pointer}
+.family-buy-row.off .native-sizes{opacity:.4;pointer-events:none}
+.family-buy .button:disabled{opacity:.45;cursor:not-allowed}
+
+/* Product buying controls: compact on desktop, thumb-friendly on mobile. */
+.mobile-colour-current{display:none}
+.mobile-selection-preview{display:none}
+.product-grid{max-width:1180px;margin-inline:auto;grid-template-columns:minmax(0,1.02fr) minmax(360px,.82fr);gap:48px}
+.product-image{max-height:720px}
+.media-carousel-shell{display:grid;grid-template-columns:40px minmax(0,1fr) 40px;align-items:center;gap:8px;margin-top:14px}
+.media-carousel-shell .media-thumbs{min-width:0;margin:0;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;scrollbar-width:none}
+.media-carousel-shell .media-thumbs::-webkit-scrollbar{display:none}
+.media-carousel-shell .media-thumb{min-width:72px;scroll-snap-align:start}
+.media-carousel-button{width:40px;height:48px;padding:0;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);background:#181814;color:var(--ivory)}
+.media-carousel-button:hover{border-color:var(--gold);color:var(--gold)}
+.media-carousel-button svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7}
+.product-info .native-colours{gap:7px}
+.product-info .native-colour{padding:8px 10px;min-height:42px}
+.product-info .native-sizes{display:grid;grid-template-columns:repeat(auto-fit,minmax(52px,1fr));gap:8px}
+.product-info .native-size-btn{width:100%;padding:10px 8px}
+
+@media(max-width:720px){
+ .product-grid{grid-template-columns:minmax(0,1fr);gap:18px;padding:10px 0 40px}
+ .product-image{aspect-ratio:1/1.06;max-height:62svh;background:#f4f1ea}
+ .product-image img{object-fit:contain;object-position:center}
+ .media-carousel-shell,.media-carousel-button,.media-thumbs{display:none}
+ .product-info{padding:18px 16px 20px;background:#181814;border:1px solid var(--line)}
+ .product-info .eyebrow{display:none}
+ .product-info h1{font-size:29px;line-height:1.12;margin-bottom:12px}
+ .product-info .price{font-size:20px;margin-bottom:16px}
+ .product-info .price .price-was{font-size:15px}
+ .product-info .offer-badge{font-size:10px;margin-left:6px;padding:2px 7px}
+ [data-native-options]{display:flex;flex-direction:column}
+ .native-option{margin:16px 0}
+ .native-option-label{font-size:14px;margin-bottom:8px;color:var(--ivory);font-weight:600}
+ .mobile-colour-current{display:block;margin:-2px 0 10px;color:var(--ivory);font-size:16px;font-weight:600}
+ .product-info .native-colours{display:flex;flex-wrap:nowrap;gap:10px;margin:0 -16px;padding:6px 16px 10px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;scrollbar-width:none}
+ .product-info .native-colours::-webkit-scrollbar{display:none}
+ .product-info .native-colour{flex:0 0 34px;width:34px;height:34px;min-height:34px;padding:0;border:1px solid #ffffff59;border-radius:50%;font-size:0;scroll-snap-align:start;justify-content:center;background:var(--option-colour,#34342e)}
+ .product-info .native-colour[aria-pressed=true]{border-color:var(--gold);box-shadow:0 0 0 2px #11110e,0 0 0 3px var(--gold)}
+ .product-info .native-colour{position:relative}
+ .product-info .native-colour::after{content:'';position:absolute;inset:-6px;border-radius:inherit}
+ .product-info .native-colour i{display:none}
+ .product-info .native-sizes{display:flex;flex-wrap:wrap;gap:6px}
+ .product-info .native-size-btn{flex:0 0 44px;width:44px;min-width:44px;min-height:44px;padding:6px 3px;font-size:13px}
+ .product-info [data-real-variant-label]{font-size:13px;line-height:1.4;margin:10px 0 14px;color:var(--muted)}
+ .product-info .form-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:8px 0 14px}
+ .product-info .form-label{margin:0;font-size:14px;font-weight:600}
+ .product-info .form-row .field{width:88px;min-height:46px;padding:9px 12px}
+ .product-info form .button{position:sticky;bottom:max(10px,env(safe-area-inset-bottom));z-index:8;min-height:54px;font-size:16px;box-shadow:0 12px 28px #0009}
+ .details-list{margin-top:22px}
+}

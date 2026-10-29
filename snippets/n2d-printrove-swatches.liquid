@@ -1,0 +1,5 @@
+{%- assign palette_rows = 'White~#FFFFFF|Black~#202020|Royal Blue~#101C86|Red~#CE051F|Golden Yellow~#FFB300|Melange Grey~#AFAFAF|Charcoal Grey~#3E3433|Sky Blue~#1BCEFA|Navy Blue~#032D49|Olive Green~#193D24|Light Pink~#FFCFE7|Coffee Brown~#693617|Mustard Yellow~#EB9B54|Liril Green~#7BDE4E|Butter Yellow~#FFFBA8|Maroon~#650C17|Orange~#FF5E00|Iris Lavender~#BAA3DA|Burgundy~#3A131F|Almond~#F8F0C6|Silver Frost~#A0A5A9|Smoke Blue~#4D608C|Chocolate Brown~#895129|Surf Blue~#9DD6E1|Pastel Dusty~#DCA1A1|Ivory~#FFFFF0|Purple~#3F246A' | split: '|' -%}
+{%- for palette_row in palette_rows -%}
+  {%- assign palette_parts = palette_row | split: '~' -%}
+  <button class="native-colour" type="button" data-native-colour data-option-index="{{ option_index }}" data-option-value="{{ palette_parts[0] | escape }}" aria-pressed="{% if palette_parts[0] == selected_colour %}true{% else %}false{% endif %}" style="--option-colour:{{ palette_parts[1] }}"><i aria-hidden="true"></i>{{ palette_parts[0] | escape }}</button>
+{%- endfor -%}

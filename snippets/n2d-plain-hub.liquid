@@ -1,0 +1,22 @@
+<section class="collection-hub">
+  <div class="container section">
+    <header class="collection-hub__heading">
+      <p class="eyebrow">The everyday foundation</p>
+      <h1>Plain Essentials.</h1>
+      <p>Shop the Men’s and Women’s collections separately.</p>
+    </header>
+    <div class="collection-hub__grid plain-hub__grid">
+      <a class="collection-hub__card" href="/pages/mens-plain-essentials">
+        <div><img src="{{ 'plain-regular-model.webp' | asset_url }}" alt="Model wearing an N2D Men’s Plain Essential T-shirt" width="1024" height="1280"><span>Shop Men</span></div>
+        <h3>Men’s Plain Essentials</h3>
+        <p>Regular and Oversized fits.</p>
+      </a>
+      <a class="collection-hub__card" href="/pages/womens-plain-essentials">
+        <div><img src="{{ 'women-plain-model-card.webp' | asset_url }}" alt="Model wearing an N2D Women’s Plain Essential T-shirt" width="1024" height="1280"><span>Shop Women</span></div>
+        <h3>Women’s Plain Essentials</h3>
+        <p>Regular Tee and Crop Top.</p>
+      </a>
+    </div>
+  </div>
+</section>
+<style>.plain-hub__grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px;margin-inline:auto}@media(max-width:720px){.plain-hub__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.plain-hub__grid h3{font-size:21px}.plain-hub__grid p{font-size:13px}}</style>

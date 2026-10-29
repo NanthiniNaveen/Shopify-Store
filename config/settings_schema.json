@@ -1,0 +1,135 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "N2D Studio Preview",
+    "theme_version": "1.0.0",
+    "theme_author": "N2D",
+    "theme_documentation_url": "https://help.shopify.com/en/manual/online-store/themes",
+    "theme_support_url": "https://help.shopify.com/"
+  },
+  {
+    "name": "Brand and colour",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#11110f"
+      },
+      {
+        "type": "color",
+        "id": "foreground",
+        "label": "Text",
+        "default": "#f3eee3"
+      },
+      {
+        "type": "color",
+        "id": "accent",
+        "label": "Gold accent",
+        "default": "#c8b186"
+      }
+    ]
+  },
+  {
+    "name": "Collections and purchasing",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "regular_collection",
+        "label": "Regular collection"
+      },
+      {
+        "type": "collection",
+        "id": "oversized_collection",
+        "label": "Oversized collection"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_purchasing",
+        "label": "Enable purchasing",
+        "default": false,
+        "info": "Keep off for this private design preview. Product status and store password are managed separately in Shopify."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_product_description",
+        "label": "Show approved product descriptions",
+        "default": false,
+        "info": "Enable after reviewing the product text for the updated N2D collection."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_studies_in_catalog",
+        "label": "Show artwork studies in empty collections",
+        "default": true,
+        "info": "A non-commercial design gallery while the catalog remains in draft."
+      }
+    ]
+  },
+  {
+    "name": "Page links",
+    "settings": [
+      {
+        "type": "url",
+        "id": "story_url",
+        "label": "Our Story page"
+      },
+      {
+        "type": "url",
+        "id": "contact_url",
+        "label": "Contact page"
+      },
+      {
+        "type": "url",
+        "id": "size_guide_url",
+        "label": "Size Guide page"
+      },
+      {
+        "type": "url",
+        "id": "shipping_url",
+        "label": "Shipping page"
+      },
+      {
+        "type": "url",
+        "id": "returns_url",
+        "label": "Returns page"
+      },
+      {
+        "type": "url",
+        "id": "privacy_url",
+        "label": "Privacy page"
+      },
+      {
+        "type": "url",
+        "id": "terms_url",
+        "label": "Terms page"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Support email",
+        "info": "Enter the confirmed business support email."
+      },
+      {
+        "type": "url",
+        "id": "plain_url",
+        "label": "Plain Essentials page"
+      },
+      {
+        "type": "url",
+        "id": "family_url",
+        "label": "Family Combos page"
+      }
+    ]
+  }
+]

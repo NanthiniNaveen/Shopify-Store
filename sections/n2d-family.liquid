@@ -1,0 +1,7 @@
+{% assign fam_handles = 'orbit-king-regular,orbit-queen-regular,orbit-prince-regular,orbit-princess-regular,royal-king-regular,royal-queen-regular,royal-prince-regular,royal-princess-regular,ivory-plain-regular,orbit-prince-kids-tee,orbit-princess-kids-tee,orbit-prince-toddler-tee,orbit-princess-toddler-tee' | split: ',' %}
+<script>
+window.N2D_FAMILY_PRODUCTS={
+{% for h in fam_handles %}{% assign p = all_products[h] %}{% if p != blank %}"{{ h }}":{"product_id":{{ p.id }},"variants":[{% for v in p.variants %}{"id":{{ v.id }},"size":{{ v.option1 | json }},"colour":{{ v.option2 | json }},"available":{{ v.available }}}{% unless forloop.last %},{% endunless %}{% endfor %}]}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}
+};
+</script>
+<div data-catalogue-mount="family"></div>{% schema %}{"name": "Family Combos", "settings": [], "presets": [{"name": "Family Combos"}]}{% endschema %}

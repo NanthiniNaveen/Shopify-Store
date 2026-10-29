@@ -1,0 +1,377 @@
+{% assign women_regular_page = false %}
+{% if template.suffix == 'womens-regular-tees' %}{% assign women_regular_page = true %}{% endif %}
+<section class="women-preview{% if women_regular_page %} women-preview--regular-page{% endif %}">
+  {% unless women_regular_page %}
+  <div class="women-preview__hero container">
+    <div class="women-preview__intro">
+      <p class="women-preview__status">Women’s Collection</p>
+      <h1>Made for her.<br><em>Still unmistakably N2D.</em></h1>
+      <p>Everyday fits, expressive artwork and colours made to feel like yours.</p>
+      <a class="button" href="#women-fits">Explore the collection <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="women-preview__art" aria-label="Women's collection artwork preview">
+      <figure class="women-preview__look women-preview__look--main">
+        <img src="{{ 'women-tee-wildflower.webp' | asset_url }}" alt="Wildflower Notes artwork on a white women's tee" width="2400" height="2400">
+      </figure>
+      <figure class="women-preview__look women-preview__look--secondary">
+        <img src="{{ 'women-tee-cafecat.webp' | asset_url }}" alt="Café Cat artwork on a lavender women's tee" width="2400" height="2400">
+      </figure>
+      <span class="women-preview__stamp">N2D Women<br>2026</span>
+    </div>
+  </div>
+
+  <div class="women-preview__ticker" aria-hidden="true">
+    <span>Women’s Regular Tee</span><span>Plain Crop Top</span><span>12 colours</span>
+  </div>
+
+  <div class="container section" id="women-fits">
+    <header class="women-preview__section-head">
+      <h2>Choose your fit.</h2>
+      <p>Explore the silhouettes, colours and artwork across the N2D women’s collection.</p>
+    </header>
+
+    <div class="women-preview__fits">
+      <a class="women-fit women-fit--regular" href="/pages/womens-collection?view=womens-regular-tees">
+        <div class="women-fit__visual">
+          <img class="women-fit__product" src="{{ 'women-tee-wildflower.webp' | asset_url }}" alt="N2D women's Regular Tee preview" width="2400" height="2400">
+          <span>12 colours</span>
+        </div>
+        <div class="women-fit__copy"><h3>Regular Tee</h3><p>Easy everyday fit. Full-size front artwork.</p><b>See previews ↓</b></div>
+      </a>
+
+      <a class="women-fit women-fit--crop" href="/pages/womens-plain-essentials#women-crop">
+        <div class="women-fit__visual">
+          <img class="women-fit__product" src="{{ 'women-crop-plain.webp' | asset_url }}" alt="N2D women's Crop Top preview" width="1300" height="1300">
+          <span>Plain essential</span>
+        </div>
+        <div class="women-fit__copy"><h3>Crop Top</h3><p>A shorter silhouette, kept clean and plain.</p><b>Explore Plain Essentials ↗</b></div>
+      </a>
+    </div>
+  </div>
+  {% endunless %}
+
+  {% if women_regular_page %}
+  <div class="women-preview__gallery">
+    <div class="container">
+      <header class="women-preview__section-head">
+        <div><p class="women-preview__status">Women / Regular Tee</p><h1>Women’s Regular Tees.</h1></div>
+        <p>Choose your artwork, colour and size.</p>
+      </header>
+
+      <div class="women-preview__designs">
+        <article class="women-design women-design--clickable" id="regular-preview" role="button" tabindex="0" data-name="Bloom — In Your Own Time" data-img="{{ 'women-ladies-type-t01.webp' | asset_url }}" data-art="{{ 'art-type-t01.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-type-t01.webp' | asset_url }}" alt="Bloom — In Your Own Time artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Bloom — In Your Own Time</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Own — Your Story" data-img="{{ 'women-ladies-type-t02.webp' | asset_url }}" data-art="{{ 'art-type-t02.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-type-t02.webp' | asset_url }}" alt="Own — Your Story artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Own — Your Story</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="More — Than Enough" data-img="{{ 'women-ladies-type-t03.webp' | asset_url }}" data-art="{{ 'art-type-t03.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-type-t03.webp' | asset_url }}" alt="More — Than Enough artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>More — Than Enough</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Glow — From Within" data-img="{{ 'women-ladies-type-t04.webp' | asset_url }}" data-art="{{ 'art-type-t04.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-type-t04.webp' | asset_url }}" alt="Glow — From Within artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Glow — From Within</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Soft Power" data-img="{{ 'women-ladies-ref-r02.webp' | asset_url }}" data-art="{{ 'art-ref-r02.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-ref-r02.webp' | asset_url }}" alt="Soft Power artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Soft Power</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Silhouette in Motion" data-img="{{ 'women-ladies-ref-r03.webp' | asset_url }}" data-art="{{ 'art-ref-r03.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-ref-r03.webp' | asset_url }}" alt="Silhouette in Motion artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Silhouette in Motion</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Wildflower Notes" data-img="{{ 'women-ladies-cap-w01.webp' | asset_url }}" data-art="{{ 'art-cap-w01.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-cap-w01.webp' | asset_url }}" alt="Wildflower Notes artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Wildflower Notes</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Café Cat" data-img="{{ 'women-ladies-cap-w02.webp' | asset_url }}" data-art="{{ 'art-cap-w02.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-cap-w02.webp' | asset_url }}" alt="Café Cat artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Café Cat</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Coastal Pause" data-img="{{ 'women-ladies-cap-w03.webp' | asset_url }}" data-art="{{ 'art-cap-w03.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-cap-w03.webp' | asset_url }}" alt="Coastal Pause artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Coastal Pause</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Terra Muse" data-img="{{ 'women-ladies-cap-w04.webp' | asset_url }}" data-art="{{ 'art-cap-w04.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-cap-w04.webp' | asset_url }}" alt="Terra Muse artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Terra Muse</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Grateful" data-img="{{ 'women-ladies-cap-w05.webp' | asset_url }}" data-art="{{ 'art-cap-w05.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-cap-w05.webp' | asset_url }}" alt="Grateful artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Grateful</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Everyday Muse" data-img="{{ 'women-ladies-cap-w06.webp' | asset_url }}" data-art="{{ 'art-cap-w06.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-cap-w06.webp' | asset_url }}" alt="Everyday Muse artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Everyday Muse</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Girl Power" data-img="{{ 'women-ladies-cap-w07.webp' | asset_url }}" data-art="{{ 'art-cap-w07.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-cap-w07.webp' | asset_url }}" alt="Girl Power artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Girl Power</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Sunlit Wings" data-img="{{ 'women-ladies-cap-w08.webp' | asset_url }}" data-art="{{ 'art-cap-w08.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-cap-w08.webp' | asset_url }}" alt="Sunlit Wings artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Sunlit Wings</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Cherry Ribbon" data-img="{{ 'women-ladies-new-n01.webp' | asset_url }}" data-art="{{ 'art-new-n01.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n01.webp' | asset_url }}" alt="Cherry Ribbon artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Cherry Ribbon</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Lunar Wings" data-img="{{ 'women-ladies-new-n02.webp' | asset_url }}" data-art="{{ 'art-new-n02.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n02.webp' | asset_url }}" alt="Lunar Wings artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Lunar Wings</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Birdsong" data-img="{{ 'women-ladies-new-n03.webp' | asset_url }}" data-art="{{ 'art-new-n03.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n03.webp' | asset_url }}" alt="Birdsong artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Birdsong</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Own Time" data-img="{{ 'women-ladies-new-n04.webp' | asset_url }}" data-art="{{ 'art-new-n04.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n04.webp' | asset_url }}" alt="Own Time artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Own Time</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Paper Flight" data-img="{{ 'women-ladies-new-n05.webp' | asset_url }}" data-art="{{ 'art-new-n05.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n05.webp' | asset_url }}" alt="Paper Flight artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Paper Flight</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Wild Grace" data-img="{{ 'women-ladies-new-n06.webp' | asset_url }}" data-art="{{ 'art-new-n06.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n06.webp' | asset_url }}" alt="Wild Grace artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Wild Grace</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Citrus Still Life" data-img="{{ 'women-ladies-new-n07.webp' | asset_url }}" data-art="{{ 'art-new-n07.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n07.webp' | asset_url }}" alt="Citrus Still Life artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Citrus Still Life</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Roller Daydream" data-img="{{ 'women-ladies-new-n08.webp' | asset_url }}" data-art="{{ 'art-new-n08.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n08.webp' | asset_url }}" alt="Roller Daydream artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Roller Daydream</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Hands Heart Sunset" data-img="{{ 'women-ladies-new-n09.webp' | asset_url }}" data-art="{{ 'art-new-n09.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n09.webp' | asset_url }}" alt="Hands Heart Sunset artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Hands Heart Sunset</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Last Light Mirror" data-img="{{ 'women-ladies-new-n10.webp' | asset_url }}" data-art="{{ 'art-new-n10.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n10.webp' | asset_url }}" alt="Last Light Mirror artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Last Light Mirror</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Pocket Marina" data-img="{{ 'women-ladies-new-n11.webp' | asset_url }}" data-art="{{ 'art-new-n11.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n11.webp' | asset_url }}" alt="Pocket Marina artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Pocket Marina</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Cloud Clip" data-img="{{ 'women-ladies-new-n12.webp' | asset_url }}" data-art="{{ 'art-new-n12.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n12.webp' | asset_url }}" alt="Cloud Clip artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Cloud Clip</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Filter Orbit" data-img="{{ 'women-ladies-new-n13.webp' | asset_url }}" data-art="{{ 'art-new-n13.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n13.webp' | asset_url }}" alt="Filter Orbit artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Filter Orbit</h3><span>19 colours · XS–5XL</span>
+        </article>
+        <article class="women-design women-design--clickable" role="button" tabindex="0" data-name="Pixel Petal" data-img="{{ 'women-ladies-new-n14.webp' | asset_url }}" data-art="{{ 'art-new-n14.webp' | asset_url }}">
+          <div class="women-design__image"><img src="{{ 'women-ladies-new-n14.webp' | asset_url }}" alt="Pixel Petal artwork on a women's Regular Tee" loading="lazy" width="1024" height="1536"></div>
+          <p>Regular Tee</p><h3>Pixel Petal</h3><span>19 colours · XS–5XL</span>
+        </article>
+      </div>
+
+      <div class="women-preview__closing">
+        <div><h2>Prefer it plain?</h2><p>Women’s plain tees and crop tops belong in Plain Essentials.</p></div>
+        <a class="button outline" href="/pages/womens-plain-essentials">Explore Plain Essentials</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="women-product-page container" id="women-product-page" hidden>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span><a href="/pages/womens-collection">Women</a><span>/</span><span id="wp-crumb"></span>
+    </nav>
+    <div class="product-grid">
+      <div>
+        <div class="product-image"><img id="wp-photo" src="{{ 'women-ladies-type-t01-white.webp' | asset_url }}" alt="N2D women's Regular Tee" width="1024" height="1536"></div>
+        <div class="media-thumbs" id="wp-thumbs" aria-label="Product photos"></div>
+      </div>
+      <div class="product-info">
+        <p class="eyebrow">N2D / Wear a story</p>
+        <h1 id="wp-name"></h1>
+        <p class="price">₹449</p>
+        <div class="native-option">
+          <label class="native-option-label">Colour</label>
+          <div class="native-colours" id="wp-swatches" role="group" aria-label="Colour"></div>
+        </div>
+        <div class="native-option">
+          <label class="native-option-label">Size</label>
+          <div class="native-sizes" id="wp-sizes" role="group" aria-label="Size"></div>
+        </div>
+        <p class="image-caption" id="wp-selected"></p>
+        <div class="form-row"><label class="form-label" for="wp-qty">Quantity</label><input class="field" id="wp-qty" type="number" value="1" min="1" inputmode="numeric"></div>
+        <button class="button" id="wp-add" type="button">Add to bag</button>
+        <p class="women-product-page__message" id="wp-message" hidden>This product will be connected to checkout when the women’s products are activated.</p>
+        <div class="details-list">
+          <details open><summary>Fit and size</summary><p>Available in 9 sizes: <strong>XS, S, M, L, XL, 2XL, 3XL, 4XL, 5XL</strong></p><p>Regular ladies fit — a familiar, easy silhouette. Take your usual size.</p><p class="chart-note"><a href="/pages/size-guide">View the full size guide.</a></p></details>
+          <details><summary>Shipping</summary><p>We ship anywhere in India. <a href="/pages/shipping">View shipping details.</a></p></details>
+          <details><summary>Returns</summary><p>Change-of-mind returns aren't accepted; damaged, misprinted or wrong items get a free replacement. <a href="/pages/returns">View return details.</a></p></details>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</section>
+
+<style>
+.women-design--clickable{cursor:pointer;transition:transform .2s}
+.women-design--clickable:hover{transform:translateY(-3px)}
+.women-design--clickable:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+.women-preview.is-product>.women-preview__hero,
+.women-preview.is-product>.women-preview__ticker,
+.women-preview.is-product>#women-fits,
+.women-preview.is-product>.women-preview__gallery{display:none}
+.women-product-page[hidden]{display:none}
+.women-product-page,.women-product-page .product-grid,.women-product-page .product-grid>*{min-width:0}
+.women-product-page .product-image{width:100%}
+.women-product-page .media-thumbs{flex-wrap:wrap}
+.women-product-page .media-thumb[aria-pressed="true"]{border-color:var(--gold)}
+.women-product-page__message{font-size:14px;color:var(--muted);margin:12px 0 0}
+.women-product-page .details-list a{text-decoration:underline;text-underline-offset:3px}
+.women-preview__fits{grid-template-columns:repeat(2,minmax(0,1fr));max-width:920px}
+.women-preview--regular-page .women-preview__gallery{padding-top:72px}
+.women-preview--regular-page .women-preview__section-head h1{font-size:clamp(46px,6vw,78px);margin:0}
+@media(max-width:720px){
+  .women-product-page{overflow:hidden}
+  .women-product-page .product-grid{width:100%}
+  .women-product-page .media-thumbs{width:100%;max-width:100%;flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px}
+  .women-product-page .media-thumb{flex:0 0 64px}
+  .women-product-page .native-colours,.women-product-page .native-sizes{max-width:100%}
+}
+</style>
+<script>
+(function(){
+var COLOURS=[["White","#ffffff","white"],["Black","#191919","black"],["Navy Blue","#1f2a44","navy-blue"],["Sky Blue","#a8cbe8","sky-blue"],["Light Pink","#f3c8d6","light-pink"],["Iris Lavender","#b3a0d4","iris-lavender"],["Butter Yellow","#f4df8e","butter-yellow"],["Melange Grey","#b0ada8","melange-grey"],["Coffee Brown","#6b4f3a","coffee-brown"],["Maroon","#6d2231","maroon"],["Olive Green","#5a6247","olive-green"],["Red","#b32833","red"]];
+var SIZES=["XS","S","M","L","XL","2XL","3XL","4XL","5XL"];
+var DISPLAY_ORDER=["Birdsong","Bloom — In Your Own Time","Cherry Ribbon","Café Cat","Own — Your Story","Lunar Wings","Coastal Pause","More — Than Enough","Citrus Still Life","Wildflower Notes","Glow — From Within","Paper Flight","Terra Muse","Soft Power","Roller Daydream","Grateful","Sunlit Wings","Silhouette in Motion","Own Time","Pocket Marina","Everyday Muse","Cloud Clip","Girl Power","Last Light Mirror","Wild Grace","Filter Orbit","Hands Heart Sunset","Pixel Petal"];
+var gallery=document.querySelector('.women-preview__designs');
+if(gallery){
+  var cardByName={};
+  gallery.querySelectorAll('.women-design--clickable').forEach(function(card){cardByName[card.dataset.name]=card});
+  DISPLAY_ORDER.forEach(function(name){if(cardByName[name])gallery.appendChild(cardByName[name])});
+}
+var cards=Array.prototype.slice.call(document.querySelectorAll('.women-design--clickable'));
+function keyFor(card){
+  var match=card.dataset.img.match(/women-ladies-(.+?)\.webp/);
+  return match?match[1]:'';
+}
+var PRODUCT_URLS={
+  'Bloom — In Your Own Time':'/products/bloom-in-your-own-time-womens-regular-t-shirt',
+  'Own — Your Story':'/products/own-your-story-womens-regular-t-shirt',
+  'More — Than Enough':'/products/more-than-enough-womens-regular-t-shirt',
+  'Glow — From Within':'/products/glow-from-within-womens-regular-t-shirt',
+  'Soft Power':'/products/soft-power-womens-regular-t-shirt',
+  'Silhouette in Motion':'/products/silhouette-in-motion-womens-regular-t-shirt',
+  'Wildflower Notes':'/products/wildflower-notes-womens-tee',
+  'Caf\u00e9 Cat':'/products/cafe-cat-womens-tee',
+  'Cafe Cat':'/products/cafe-cat-womens-tee',
+  'Coastal Pause':'/products/coastal-pause-womens-regular-t-shirt',
+  'Terra Muse':'/products/terra-muse-womens-tee',
+  'Grateful':'/products/grateful-womens-tee',
+  'Everyday Muse':'/products/everyday-muse-womens-tee',
+  'Girl Power':'/products/girl-power-womens-regular-t-shirt',
+  'Sunlit Wings':'/products/sunlit-wings-womens-regular-t-shirt',
+  'Cherry Ribbon':'/products/cherry-ribbon-womens-regular-t-shirt',
+  'Lunar Wings':'/products/lunar-wings-womens-regular-t-shirt',
+  'Birdsong':'/products/birdsong-womens-regular-t-shirt',
+  'Own Time':'/products/own-time-womens-regular-t-shirt',
+  'Paper Flight':'/products/paper-flight-womens-regular-t-shirt',
+  'Wild Grace':'/products/wild-grace-womens-regular-t-shirt',
+  'Citrus Still Life':'/products/citrus-still-life-womens-regular-t-shirt',
+  'Roller Daydream':'/products/roller-daydream-womens-regular-t-shirt',
+  'Hands Heart Sunset':'/products/hands-heart-sunset-womens-regular-t-shirt',
+  'Last Light Mirror':'/products/last-light-mirror-womens-regular-t-shirt',
+  'Pocket Marina':'/products/pocket-marina-womens-regular-t-shirt',
+  'Cloud Clip':'/products/cloud-clip-womens-regular-t-shirt',
+  'Filter Orbit':'/products/filter-orbit-womens-regular-t-shirt',
+  'Pixel Petal':'/products/pixel-petal-womens-regular-t-shirt'
+};
+function productUrl(key,card){
+  if(card&&card.dataset.name&&PRODUCT_URLS[card.dataset.name])return PRODUCT_URLS[card.dataset.name];
+  var url=new URL(window.location.href);
+  url.searchParams.set('design',key);
+  url.hash='';
+  return url.toString();
+}
+cards.forEach(function(card){
+  var key=keyFor(card);
+  card.setAttribute('role','link');
+  card.setAttribute('aria-label','View '+card.dataset.name);
+  function navigate(){window.location.href=productUrl(key,card)}
+  card.addEventListener('click',navigate);
+  card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();navigate()}});
+});
+var selectedKey=new URLSearchParams(window.location.search).get('design');
+if(!selectedKey)return;
+var card=cards.find(function(item){return keyFor(item)===selectedKey});
+if(!card)return;
+var page=document.getElementById('women-product-page');
+var section=document.querySelector('.women-preview');
+var photo=document.getElementById('wp-photo');
+var swatches=document.getElementById('wp-swatches');
+var sizes=document.getElementById('wp-sizes');
+var thumbs=document.getElementById('wp-thumbs');
+var selected=document.getElementById('wp-selected');
+var baseMatch=card.dataset.img.match(/^(.*women-ladies-.+?)\.webp(\?.*)?$/);
+if(!baseMatch)return;
+var base=baseMatch[1],version=baseMatch[2]||'';
+var defaultIndex=cards.indexOf(card)%COLOURS.length;
+var current={colour:COLOURS[defaultIndex],size:'M'};
+function imageUrl(colour){return base+'-'+colour[2]+'.webp'+version}
+function sync(){
+  photo.src=imageUrl(current.colour);
+  photo.alt=card.dataset.name+' on a '+current.colour[0]+' women’s Regular Tee';
+  selected.textContent=current.size+' / '+current.colour[0];
+  swatches.querySelectorAll('button').forEach(function(button){button.setAttribute('aria-pressed',button.dataset.slug===current.colour[2]?'true':'false')});
+  sizes.querySelectorAll('button').forEach(function(button){button.setAttribute('aria-pressed',button.textContent===current.size?'true':'false')});
+  thumbs.querySelectorAll('button').forEach(function(button){button.setAttribute('aria-pressed',button.dataset.slug===current.colour[2]?'true':'false')});
+}
+COLOURS.forEach(function(colour){
+  var button=document.createElement('button');
+  button.type='button';button.className='native-colour';button.dataset.slug=colour[2];
+  button.style.setProperty('--option-colour',colour[1]);
+  button.innerHTML='<i aria-hidden="true"></i>'+colour[0];
+  button.onclick=function(){current.colour=colour;sync()};
+  swatches.appendChild(button);
+  var thumb=document.createElement('button');
+  thumb.type='button';thumb.className='media-thumb';thumb.dataset.slug=colour[2];
+  thumb.setAttribute('aria-label','View '+colour[0]+' photo');
+  thumb.innerHTML='<img src="'+imageUrl(colour)+'" alt="" loading="lazy" width="160" height="240">';
+  thumb.onclick=function(){current.colour=colour;sync();window.scrollTo({top:0,behavior:'smooth'})};
+  thumbs.appendChild(thumb);
+});
+SIZES.forEach(function(size){
+  var button=document.createElement('button');
+  button.type='button';button.className='native-size-btn';button.textContent=size;
+  button.onclick=function(){current.size=size;sync()};
+  sizes.appendChild(button);
+});
+document.getElementById('wp-name').textContent=card.dataset.name;
+document.getElementById('wp-crumb').textContent=card.dataset.name;
+document.title=card.dataset.name+' — N2D';
+document.getElementById('wp-add').onclick=function(){
+  var message=document.getElementById('wp-message');
+  message.hidden=false;
+  message.focus&&message.focus();
+};
+section.classList.add('is-product');
+page.hidden=false;
+sync();
+window.scrollTo(0,0);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Women preview",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Women preview"
+    }
+  ]
+}
+{% endschema %}

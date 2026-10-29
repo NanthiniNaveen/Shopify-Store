@@ -1,0 +1,28 @@
+<section class="section" id="choose-fit"><div class="container"><div class="section-head"><div><div class="eyebrow">Find your silhouette</div><h2>Two fits. Your way.</h2></div><p class="muted">Start with the shape.<br>Then find the story that speaks to you.</p></div><div class="fit-grid">{% assign regular_url = '/collections/regular' %}{% if settings.regular_collection != blank %}{% assign regular_url = settings.regular_collection.url %}{% endif %}{% assign oversized_url = '/collections/oversized' %}{% if settings.oversized_collection != blank %}{% assign oversized_url = settings.oversized_collection.url %}{% endif %}<a class="fit-card" href="{{ regular_url }}">{% if section.settings.regular_image %}{{ section.settings.regular_image | image_url: width: 1100 | image_tag: loading: 'lazy', alt: 'Regular fit concept' }}{% else %}<img src="{{ 'regular-fit.webp' | asset_url }}" loading="lazy" alt="Regular fit concept with front artwork" width="1024" height="1536">{% endif %}<div class="fit-card-caption"><h3>Regular</h3><p>A familiar, easy silhouette.</p><span class="arrow" aria-hidden="true">↗</span></div></a><a class="fit-card" href="{{ oversized_url }}">{% if section.settings.oversized_image %}{{ section.settings.oversized_image | image_url: width: 1100 | image_tag: loading: 'lazy', alt: 'Oversized fit concept' }}{% else %}<img src="{{ 'oversized-fit.webp' | asset_url }}" loading="lazy" alt="Oversized fit concept with back artwork" width="1122" height="1402">{% endif %}<div class="fit-card-caption"><h3>Oversized</h3><p>A broader, relaxed silhouette.</p><span class="arrow" aria-hidden="true">↗</span></div></a></div>{% if section.settings.show_concept_note %}<p class="image-caption" style="margin:16px 0 0"></p>{% endif %}</div></section><div class="editorial-strip"><span>Regular · front artwork</span><span>Oversized · back artwork</span><span>Your silhouette</span></div>
+{% schema %}{
+  "name": "Fit selection",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "regular_image",
+      "label": "Regular fit photograph"
+    },
+    {
+      "type": "image_picker",
+      "id": "oversized_image",
+      "label": "Oversized fit photograph"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_concept_note",
+      "label": "Show concept image note",
+      "default": true,
+      "info": "Turn off after replacing the references with approved real garment photos."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fit selection"
+    }
+  ]
+}{% endschema %}

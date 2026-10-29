@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% if request.page_type == 'index' %}N2D · Wear a story.{% else %}{{ page_title | escape }}{% unless page_title contains 'N2D' %} · N2D{% endunless %}{% endif %}</title>
+  <link rel="canonical" href="{{ canonical_url }}">
+  {% capture n2d_meta_description %}
+    {% if page_description %}
+      {{ page_description }}
+    {% elsif request.page_type == 'collection' and collection.handle == 'regular' %}
+      Shop N2D regular fit graphic T-shirts inspired by trains, chai, kolam and everyday India. Made in India.
+    {% elsif request.page_type == 'collection' and collection.handle == 'oversized' %}
+      Shop N2D oversized graphic T-shirts with expressive back artwork inspired by everyday India. Made in India.
+    {% elsif request.page_type == 'collection' %}
+      Explore N2D graphic T-shirts inspired by everyday India. Regular and oversized fits, made in India.
+    {% endif %}
+  {% endcapture %}
+  {% assign n2d_meta_description = n2d_meta_description | strip %}
+  {% if n2d_meta_description != blank %}<meta name="description" content="{{ n2d_meta_description | escape }}">{% endif %}
+  <link rel="icon" type="image/svg+xml" sizes="any" href="{{ 'n2d-circle-ivory.svg' | asset_url }}">
+  {{ content_for_header }}
+  {{ 'n2d.css' | asset_url | stylesheet_tag }}<link rel="stylesheet" href="{{ 'garments.css' | asset_url }}&amp;n2d=colour-controls-v3">{{ 'women.css' | asset_url | stylesheet_tag }}{{ 'women-future.css' | asset_url | stylesheet_tag }}
+  <style>:root{--ink:{{ settings.background }};--ivory:{{ settings.foreground }};--gold:{{ settings.accent }}}</style>
+  <script src="{{ 'garments.js' | asset_url }}" defer></script><script src="{{ 'gallery.js' | asset_url }}" defer></script><script src="{{ 'catalogue.js' | asset_url }}" defer></script><script src="{{ 'n2d.js' | asset_url }}&amp;n2d=colour-controls-v3" defer></script>
+</head>
+<body>{% render 'n2d-printrove-palette' %}{% render 'n2d-study-data' %}{% render 'n2d-plain-colour-map' %}
+  <a class="skip-link" href="#MainContent">Skip to content</a>
+  {% section 'n2d-header' %}
+  <main id="MainContent" tabindex="-1">{{ content_for_layout }}</main>
+  {% section 'n2d-footer' %}
+</body></html>

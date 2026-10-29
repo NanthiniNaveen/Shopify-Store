@@ -1,0 +1,19 @@
+<section class="section plain-audience">
+  <div class="container">
+    <header class="page-heading">
+      <p class="eyebrow">Men’s collection</p>
+      <h1>Men’s Plain Essentials.</h1>
+      <p>Clean, artwork-free staples. Choose Regular or Oversized, then select your colour and size inside the product page.</p>
+    </header>
+    <div class="art-grid plain-audience__grid">
+      {% assign mens_plain_regular = all_products['mens-plain-regular'] %}
+      {% assign mens_plain_oversized = all_products['mens-plain-oversized'] %}
+      {% if mens_plain_regular != blank %}{% render 'n2d-product-card', product: mens_plain_regular %}{% endif %}
+      {% if mens_plain_oversized != blank %}{% render 'n2d-product-card', product: mens_plain_oversized %}{% endif %}
+    </div>
+  </div>
+</section>
+<style>
+.plain-audience__grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px;margin-inline:auto}
+@media(max-width:720px){.plain-audience .page-heading h1{font-size:43px}.plain-audience__grid{gap:16px}.plain-audience__grid .art-card h3{font-size:20px}}
+</style>

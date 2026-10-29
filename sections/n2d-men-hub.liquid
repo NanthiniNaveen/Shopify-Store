@@ -1,0 +1,34 @@
+<section class="collection-hub">
+  <div class="collection-hub__hero">
+    <div class="collection-hub__copy">
+      <p>Men’s collection</p>
+      <h1>Find your shape.<br><em>Wear your story.</em></h1>
+      <span>Three ways to wear N2D, from everyday classics to quiet staples.</span>
+    </div>
+    <div class="collection-hub__hero-image">
+      <img src="{{ 'garment-11-oversized-forest-worn.webp' | asset_url }}" alt="N2D men's Oversized fit" width="900" height="1125">
+    </div>
+  </div>
+
+  <div class="container section">
+    <div class="collection-hub__heading">
+      <h2>Choose your fit.</h2>
+      <p>Start with the silhouette, then discover the artwork.</p>
+    </div>
+    <div class="collection-hub__grid">
+      <a class="collection-hub__card" href="/collections/regular">
+        <div><img src="{{ 'regular-fit.webp' | asset_url }}" alt="N2D Regular fit" loading="lazy" width="1024" height="1280"><span>Shop now</span></div>
+        <h3>Regular</h3><p>Classic shape. Front artwork.</p>
+      </a>
+      <a class="collection-hub__card" href="/collections/oversized">
+        <div><img src="{{ 'oversized-fit.webp' | asset_url }}" alt="N2D Oversized fit" loading="lazy" width="1024" height="1280"><span>Shop now</span></div>
+        <h3>Oversized</h3><p>Relaxed shape. Back artwork.</p>
+      </a>
+      <a class="collection-hub__card" href="/pages/mens-plain-essentials">
+        <div><img src="{{ 'plain-regular-model.webp' | asset_url }}" alt="N2D Plain Essentials plain T-shirt" loading="lazy" width="900" height="1125"><span>Shop now</span></div>
+        <h3>Plain Essentials</h3><p>Quiet staples. N2D finish.</p>
+      </a>
+    </div>
+  </div>
+</section>
+{% schema %}{"name":"Men collection hub","settings":[],"presets":[{"name":"Men collection hub"}]}{% endschema %}

@@ -1,0 +1,308 @@
+<div class="container">
+  <header class="page-heading">
+    <div class="eyebrow">Find your story</div>
+    <h1>{{ collection.title | escape }}</h1>
+    {% if collection.description != blank %}
+      <div class="rte muted">{{ collection.description }}</div>
+    {% else %}
+      <p>Expressive artwork. Your silhouette.</p>
+    {% endif %}
+  </header>
+
+  <div class="toolbar">
+    {% if collection.products_count > 0 %}
+      <label>Sort by
+        <select class="collection-sort" data-sort-select>
+          {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+          {% for option in collection.sort_options %}
+            <option value="{{ option.value | escape }}" {% if option.value == sort_by %}selected{% endif %}>{{ option.name | escape }}</option>
+          {% endfor %}
+        </select>
+      </label>
+    {% endif %}
+  </div>
+
+  {% paginate collection.products by 250 %}
+    {% if collection.products_count > 0 %}
+      {% assign hide_regular_plain = false %}
+      {% if collection.handle == 'regular' %}
+        {% assign hide_regular_plain = true %}
+      {% endif %}
+      {% assign hide_oversized_plain = false %}
+      {% if collection.handle == 'oversized' %}
+        {% assign hide_oversized_plain = true %}
+      {% endif %}
+      {% assign hide_women_regular = false %}
+      {% assign hide_family_regular = false %}
+      {% if collection.handle == 'regular' %}
+        {% assign hide_women_regular = true %}
+        {% assign hide_family_regular = true %}
+      {% endif %}
+      {% assign women_count = 0 %}
+      {% assign men_count = 0 %}
+      {% for product in collection.products %}
+        {% assign count_product = true %}
+        {% if hide_regular_plain %}
+          {% if product.handle == 'mens-plain-regular' or product.handle == 'womens-plain-regular' %}
+            {% assign count_product = false %}
+          {% endif %}
+        {% endif %}
+        {% if hide_oversized_plain and product.handle == 'mens-plain-oversized' %}
+          {% assign count_product = false %}
+        {% endif %}
+        {% if hide_family_regular and product.handle contains 'royal-' %}
+          {% assign count_product = false %}
+        {% endif %}
+        {% if count_product %}
+          {% if product.handle contains 'womens-' or product.title contains "Women's" %}
+            {% assign count_product = false %}
+            {% unless hide_women_regular %}
+              {% assign women_count = women_count | plus: 1 %}
+            {% endunless %}
+          {% endif %}
+          {% if count_product %}
+            {% assign men_count = men_count | plus: 1 %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% if women_count > 0 %}
+        {% if men_count > 0 %}
+        <section class="gender-collection" aria-labelledby="men-collection-title">
+          <h2 id="men-collection-title">Men’s collection</h2>
+          <div class="art-grid">
+            {% for product in collection.products %}
+              {% assign show_product = true %}
+              {% if product.handle contains 'womens-' or product.title contains "Women's" or product.handle == 'oz-exchange-rate' %}
+                {% assign show_product = false %}
+              {% endif %}
+              {% if hide_regular_plain and product.handle == 'mens-plain-regular' %}
+                {% assign show_product = false %}
+              {% endif %}
+              {% if hide_oversized_plain and product.handle == 'mens-plain-oversized' %}
+                {% assign show_product = false %}
+              {% endif %}
+              {% if show_product %}
+                {% render 'n2d-product-card', product: product %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+
+        <section class="gender-collection gender-collection--women" {% if men_count > 0 %}aria-labelledby="women-collection-title"{% endif %}>
+          {% if men_count > 0 %}<h2 id="women-collection-title">Women’s collection</h2>{% endif %}
+          <div class="art-grid">
+            {% for product in collection.products %}
+              {% assign show_product = true %}
+              {% if hide_regular_plain and product.handle == 'womens-plain-regular' %}
+                {% assign show_product = false %}
+              {% endif %}
+              {% if show_product %}
+                {% if product.handle contains 'womens-' or product.title contains "Women's" %}
+                  {% render 'n2d-product-card', product: product %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </section>
+      {% else %}
+        <div class="art-grid">
+          {% for product in collection.products %}
+            {% assign show_product = true %}
+            {% if product.handle == 'oz-exchange-rate' %}
+              {% assign show_product = false %}
+            {% endif %}
+            {% if hide_regular_plain %}
+              {% if product.handle == 'mens-plain-regular' or product.handle == 'womens-plain-regular' %}
+                {% assign show_product = false %}
+              {% endif %}
+            {% endif %}
+            {% if hide_oversized_plain and product.handle == 'mens-plain-oversized' %}
+              {% assign show_product = false %}
+            {% endif %}
+            {% if hide_women_regular %}
+              {% if product.handle contains 'womens-' or product.title contains "Women's" %}
+                {% assign show_product = false %}
+              {% endif %}
+            {% endif %}
+            {% if hide_family_regular and product.handle contains 'royal-' %}
+              {% assign show_product = false %}
+            {% endif %}
+            {% if show_product %}
+              {% render 'n2d-product-card', product: product %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% else %}
+      {% if collection.handle == 'crop-tops' %}
+        <div class="crop-tops-preview">
+          <header class="women-preview__section-head">
+            <div>
+              <p class="women-preview__status">Women / Crop Tops</p>
+              <h2>Women’s Crop Tops.</h2>
+            </div>
+            <p>Thirty designs.</p>
+          </header>
+
+          {% assign crop_titles = "Easy Days|Koi Orbit|Wild Blue|Good Things|Sunset Passage|Petal Pages|Little by Little|Café Bloom|Rain Garden|Vinyl Garden|Mountain Air|Off Duty|Peach Season|Meadow Heron|Foxglove Nap|Quietly Unstoppable|Courtyard Light|Fern Eclipse|Ceramic Soul|Sail Away|Made of Magic|Desert Reverie|Stargazer|Market Bicycle|Lotus Current|Weekend State|Ocean Jewel|Mango Season|Mixtape Meadow|Dragonfly Drift" | split: "|" %}
+          {% assign crop_images = "crop-c01-easy-days.webp|crop-c02-koi-orbit.webp|crop-c03-wild-blue.webp|crop-c04-good-things.webp|crop-c05-sunset-passage.webp|crop-c06-petal-pages.webp|crop-c07-little-by-little.webp|crop-c08-caf-bloom.webp|crop-c09-rain-garden.webp|crop-c10-vinyl-garden.webp|crop-c11-mountain-air.webp|crop-c12-off-duty.webp|crop-c13-peach-season.webp|crop-c14-meadow-heron.webp|crop-c15-foxglove-nap.webp|crop-c16-quietly-unstoppable.webp|crop-c17-courtyard-light.webp|crop-c18-fern-eclipse.webp|crop-c19-ceramic-soul.webp|crop-c20-sail-away.webp|crop-c21-made-of-magic.webp|crop-c22-desert-reverie.webp|crop-c23-stargazer.webp|crop-c24-market-bicycle.webp|crop-c25-lotus-current.webp|crop-c26-weekend-state.webp|crop-c27-ocean-jewel.webp|crop-c28-mango-season.webp|crop-c29-mixtape-meadow.webp|crop-c30-dragonfly-drift.webp" | split: "|" %}
+          {% assign crop_colours = "Warm ivory|Washed black|Powder blue|Dusty lavender|Apricot peach|Dark burgundy|Dusty sage|Oatmeal|Midnight navy|Warm ivory|Mist blue grey|Washed cocoa|Ecru|Soft celadon|Soft cream|Deep navy|Dusty blush|Deep teal|Muted terracotta|Washed indigo|Warm ivory|Sand beige|Washed black|Pale butter yellow|Dusty lilac|Deep plum|Pale seafoam|Fresh ivory|Dusty rose|Deep forest green" | split: "|" %}
+          <div class="women-preview__designs">
+            {% for title in crop_titles %}
+              {% assign i = forloop.index0 %}
+              {% assign crop_parts = crop_images[i] | remove: '.webp' | split: '-' %}
+              {% assign crop_handle = crop_parts | slice: 2, 99 | join: '-' %}
+              <a class="women-design" href="/products/womens-crop-{{ crop_handle }}">
+                {% assign crop_card_handle = 'womens-crop-' | append: crop_handle %}{% capture crop_preview_model %}{% render 'n2d-crop-card-image', handle: crop_card_handle %}{% endcapture %}{% assign crop_preview_model = crop_preview_model | strip %}<div class="women-design__image"><img src="{{ crop_preview_model }}" alt="Model wearing {{ title | escape }} Crop Top" loading="lazy" width="1024" height="1536"></div>
+                <p>Crop Top</p><h3>{{ title }}</h3><span>13 colours · XS–2XL</span>
+                <p class="crop-design__price"><strong class="sale-price">₹399</strong> <span class="price-was">₹649</span> <span class="offer-badge">39% off</span></p>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="women-product-page crop-product-page container" id="crop-product-page" hidden>
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a><span>/</span><a href="/collections/crop-tops">Crop Tops</a><span>/</span><span id="cp-crumb"></span>
+          </nav>
+          <div class="product-grid">
+            <div>
+              <div class="product-image"><img id="cp-photo" src="{{ 'crop-c01-easy-days.webp' | asset_url }}" alt="N2D women's Crop Top" width="1024" height="1536"></div>
+            </div>
+            <div class="product-info">
+              <p class="eyebrow">N2D / Wear a story</p>
+              <h1 id="cp-name"></h1>
+              <p class="price"><strong class="sale-price">₹399</strong> <span class="price-was">₹649</span><span class="offer-badge">39% off</span></p>
+              <div class="native-option">
+                <label class="native-option-label">Colour</label>
+                <div class="native-colours" id="cp-swatches" role="group" aria-label="Colour"></div>
+              </div>
+              <div class="native-option">
+                <label class="native-option-label">Size</label>
+                <div class="native-sizes" id="cp-sizes" role="group" aria-label="Size"></div>
+              </div>
+              <p class="image-caption" id="cp-selected"></p>
+              <p class="image-caption" id="cp-shown" style="color:var(--muted)"></p>
+              <div class="form-row"><label class="form-label" for="cp-qty">Quantity</label><input class="field" id="cp-qty" type="number" value="1" min="1" inputmode="numeric"></div>
+              <button class="button" id="cp-add" type="button">Add to bag</button>
+              <button class="button button-ghost" id="cp-wish" type="button">Add to wishlist</button>
+              <p class="women-product-page__message" id="cp-message" hidden>Available now in all colours and sizes.</p>
+              <div class="details-list">
+                <details open><summary>Fit and size</summary><p>Available in 6 sizes: <strong>XS, S, M, L, XL, 2XL</strong></p><p>Cropped ladies fit — ends above the waist. Take your usual size.</p><p class="chart-note"><a href="/pages/size-guide">View the full size guide.</a></p></details>
+                <details><summary>Shipping</summary><p>We ship anywhere in India. <a href="/pages/shipping">View shipping details.</a></p></details>
+                <details><summary>Returns</summary><p>Change-of-mind returns aren't accepted; damaged, misprinted or wrong items get a free replacement. <a href="/pages/returns">View return details.</a></p></details>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+        (function(){
+        var COLOURS=[["Black","#191919","black"],["White","#f2efe8","white"],["Melange Grey","#b0ada8","melange-grey"],["Light Pink","#f3c8d6","light-pink"],["Sky Blue","#a8cbe8","sky-blue"],["Butter Yellow","#f4df8e","butter-yellow"],["Golden Yellow","#f0b429","golden-yellow"],["Maroon","#6d2231","maroon"],["Mustard Yellow","#d39e2a","mustard-yellow"],["Navy Blue","#1f2a44","navy-blue"],["Olive Green","#5a6247","olive-green"],["Red","#b32833","red"],["Iris Lavender","#b3a0d4","iris-lavender"]];
+        var SIZES=["XS","S","M","L","XL","2XL"];
+        var cards=Array.prototype.slice.call(document.querySelectorAll('.crop-tops-preview .women-design--clickable'));
+        function keyFor(card){var m=card.dataset.img.match(/crop-(.+?)\.webp/);return m?m[1]:''}
+        cards.forEach(function(card){
+          var key=keyFor(card);
+          card.setAttribute('aria-label','View '+card.dataset.name);
+          function navigate(){var url=new URL(window.location.href);url.searchParams.set('design',key);url.hash='';window.location.href=url.toString()}
+          card.addEventListener('click',navigate);
+          card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();navigate()}});
+        });
+        var selectedKey=new URLSearchParams(window.location.search).get('design');
+        if(!selectedKey)return;
+        var card=cards.find(function(item){return keyFor(item)===selectedKey});
+        if(!card)return;
+        var wrap=document.querySelector('.crop-tops-preview');
+        var page=document.getElementById('crop-product-page');
+        var photo=document.getElementById('cp-photo');
+        var swatches=document.getElementById('cp-swatches');
+        var sizes=document.getElementById('cp-sizes');
+        var selected=document.getElementById('cp-selected');
+        var shown=document.getElementById('cp-shown');
+        var current={colour:COLOURS[1],size:'M'};
+        function sync(){
+          var base=card.dataset.img;
+          var coloured=base.replace(/\.webp(\?.*)?$/,'-'+current.colour[2]+'.webp$1');
+          if(coloured===base)coloured=base;
+          photo.onerror=function(){photo.onerror=null;photo.src=base;shown.textContent='Artwork shown on '+card.dataset.colour};
+          photo.onload=function(){shown.textContent=(photo.src===coloured)?('Shown in '+current.colour[0]):('Artwork shown on '+card.dataset.colour)};
+          photo.src=coloured;
+          photo.alt=card.dataset.name+' artwork on a women\u2019s Crop Top in '+current.colour[0];
+          selected.textContent=current.size+' / '+current.colour[0];
+          swatches.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.slug===current.colour[2]?'true':'false')});
+          sizes.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.textContent===current.size?'true':'false')});
+        }
+        COLOURS.forEach(function(colour){
+          var b=document.createElement('button');
+          b.type='button';b.className='native-colour';b.dataset.slug=colour[2];
+          b.style.setProperty('--option-colour',colour[1]);
+          b.innerHTML='<i aria-hidden="true"></i>'+colour[0];
+          b.onclick=function(){current.colour=colour;sync()};
+          swatches.appendChild(b);
+        });
+        SIZES.forEach(function(size){
+          var b=document.createElement('button');
+          b.type='button';b.className='native-size-btn';b.textContent=size;
+          b.onclick=function(){current.size=size;sync()};
+          sizes.appendChild(b);
+        });
+        document.getElementById('cp-name').textContent=card.dataset.name+' — Crop Top';
+        document.getElementById('cp-crumb').textContent=card.dataset.name;
+        document.title=card.dataset.name+' — N2D';
+        document.getElementById('cp-add').onclick=function(){document.getElementById('cp-message').hidden=false};
+        document.getElementById('cp-wish').onclick=function(){document.getElementById('cp-message').hidden=false};
+        var container=wrap.closest('.container');
+        if(container)container.classList.add('crop-product-mode');
+        wrap.classList.add('is-product');
+        page.hidden=false;
+        sync();
+        window.scrollTo(0,0);
+        })();
+        </script>
+      {% elsif settings.show_studies_in_catalog %}
+        {% render 'n2d-studio-collection' %}
+      {% else %}
+        <div class="empty-state">
+          <h2>A new chapter is taking shape.</h2>
+          <p>Our collection is being prepared. Explore the studio artwork while the final pieces come together.</p>
+          <a class="button outline" href="{{ routes.root_url }}#studio-selection">Explore the artwork</a>
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endpaginate %}
+  <div class="collection-bottom"></div>
+</div>
+
+<style>
+  .gender-collection > h2 {
+    margin: 0 0 28px;
+    font: clamp(34px, 4vw, 54px)/1 var(--display);
+  }
+  .gender-collection--women {
+    margin-top: clamp(70px, 9vw, 120px);
+    padding-top: clamp(48px, 6vw, 76px);
+    border-top: 1px solid var(--line);
+  }
+  .women-design > p.crop-design__price {
+    margin: 8px 0 0;
+    font-size: 16px;
+    letter-spacing: normal;
+    text-transform: none;
+  }
+  .women-design > p.crop-design__price .offer-badge {
+    margin-left: 6px;
+    font-size: 11px;
+  }
+  .women-design--clickable { cursor: pointer; transition: transform .2s; }
+  .women-design--clickable:hover { transform: translateY(-3px); }
+  .women-design--clickable:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
+  .crop-tops-preview.is-product > * { display: none; }
+  .crop-product-page[hidden] { display: none; }
+  .crop-product-mode > .page-heading,
+  .crop-product-mode > .toolbar { display: none; }
+</style>
+
+{% schema %}{"name":"Collection","settings":[]}{% endschema %}

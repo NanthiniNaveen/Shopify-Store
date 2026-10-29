@@ -1,0 +1,25 @@
+{% case page.handle %}
+  {% when 'our-story' %}
+    <div class="container"><header class="page-heading"><h1>{{ page.title | escape }}</h1></header><div class="page-prose rte"><h2>From the everyday.</h2><p>A train cutting through smoke. Chai in the rain. A quiet stretch of coast. The small moments of everyday India carry stories of their own.</p><p>We bring those moments into expressive illustrations and pared-back clothing. Our Regular fit carries the artwork on the front with a plain back. Oversized carries it on the back with a plain front.</p><h2>Room to be yourself.</h2><p>Regular and Oversized are two directions for the same idea: choose the silhouette that feels like you, then find the artwork you want to carry.</p><h2>Made with intention.</h2><p>We are refining the artwork and reviewing physical samples, with attention to print clarity, proportion and how each piece feels when worn.</p></div></div>
+  {% when 'size-guide' %}
+    <div class="container"><header class="page-heading"><h1>{{ page.title | escape }}</h1></header><div class="page-prose rte">{% if page.content != blank %}{{ page.content }}{% else %}<p>All measurements are garment measurements in inches, taken with the tee laid flat (1&Prime; = 2.54&nbsp;cm). Actual measurements may vary by up to 1&Prime;.</p><h2>Regular &mdash; Unisex round neck</h2><table class="size-chart"><thead><tr><th>Size</th><th>Chest</th><th>Length</th><th>Sleeve</th></tr></thead><tbody><tr><td>S</td><td>38</td><td>26</td><td>7</td></tr><tr><td>M</td><td>40</td><td>27</td><td>7.5</td></tr><tr><td>L</td><td>42</td><td>28</td><td>8</td></tr><tr><td>XL</td><td>44</td><td>29</td><td>8.5</td></tr><tr><td>XXL</td><td>46</td><td>30</td><td>9</td></tr></tbody></table><p>Regular fit &mdash; a familiar, easy silhouette. Take your usual size.</p><h2>Oversized &mdash; Premium oversized tee</h2><table class="size-chart"><thead><tr><th>Size</th><th>Chest</th><th>Length</th></tr></thead><tbody><tr><td>S</td><td>42</td><td>28</td></tr><tr><td>M</td><td>44</td><td>29</td></tr><tr><td>L</td><td>46</td><td>30</td></tr><tr><td>XL</td><td>48</td><td>31</td></tr><tr><td>XXL</td><td>50</td><td>32</td></tr></tbody></table><p>Oversized fit &mdash; a broader, relaxed silhouette with dropped shoulders. Take your usual size for a relaxed look, or size down for a closer fit.</p><h2>How to measure</h2><ul><li>Lay a T-shirt that fits you well flat, without stretching it.</li><li><strong>Chest:</strong> measure across the garment, just below the armholes.</li><li><strong>Length:</strong> measure from the highest shoulder point beside the neck to the hem.</li><li>Compare with the chart for the silhouette you are buying &mdash; the same size label measures differently on Regular and Oversized.</li></ul>{% endif %}</div></div>
+  {% when 'privacy' %}
+    <div class="container"><header class="page-heading"><h1>{{ page.title | escape }}</h1></header><div class="page-prose rte"><p class="note">This information is being finalised before the collection opens.</p><p>Our privacy notice is being prepared.</p><p>The final notice will identify the business responsible for customer information, explain how information is used, and provide a contact for privacy requests.</p></div></div>
+  {% when 'plain-essentials' %}
+    {% render 'n2d-plain-hub' %}
+  {% when 'mens-plain-essentials' %}
+    {% render 'n2d-men-plain' %}
+  {% when 'womens-plain-essentials' %}
+    {% render 'n2d-women-plain' %}
+  {% when 'family-combos' %}
+    {% assign fam_handles = 'orbit-king-regular,orbit-queen-regular,orbit-prince-regular,orbit-princess-regular,royal-king-regular,royal-queen-regular,royal-prince-regular,royal-princess-regular,ivory-plain-regular,orbit-prince-kids-tee,orbit-princess-kids-tee,orbit-prince-toddler-tee,orbit-princess-toddler-tee' | split: ',' %}
+    <script>
+    window.N2D_FAMILY_PRODUCTS={
+    {% for h in fam_handles %}{% assign p = all_products[h] %}{% if p != blank %}"{{ h }}":{"product_id":{{ p.id }},"variants":[{% for v in p.variants %}{"id":{{ v.id }},"size":{{ v.option1 | json }},"colour":{{ v.option2 | json }},"available":{{ v.available }}}{% unless forloop.last %},{% endunless %}{% endfor %}]}{% unless forloop.last %},{% endunless %}{% endif %}{% endfor %}
+    };
+    </script>
+    <div data-catalogue-mount="family"></div>
+  {% else %}
+    <div class="container"><header class="page-heading"><h1>{{ page.title | escape }}</h1></header><div class="page-prose rte">{% if page.content != blank %}{{ page.content }}{% else %}<p>This information is being finalised before the collection opens.</p><p>Please check back for the confirmed details.</p>{% endif %}</div></div>
+{% endcase %}
+{% schema %}{"name":"Page","settings":[]}{% endschema %}

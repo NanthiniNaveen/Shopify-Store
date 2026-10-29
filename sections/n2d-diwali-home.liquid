@@ -1,0 +1,343 @@
+{{ 'diwali-sale.css' | asset_url | stylesheet_tag }}
+
+<div
+  class="diwali-sale"
+  data-diwali-sale
+  data-sale-end="2026-11-15T23:59:59+05:30"
+>
+  <section class="diwali-hero" aria-labelledby="diwali-title">
+    <svg
+      class="diwali-fireworks"
+      viewBox="0 0 1440 900"
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden="true"
+    >
+      <defs>
+        <g id="diwali-firework-burst">
+          <circle class="diwali-firework__ring" cx="0" cy="0" r="42"></circle>
+          <g class="diwali-firework__rays">
+            <line x1="0" y1="-56" x2="0" y2="-104"></line>
+            <line x1="28" y1="-48" x2="52" y2="-90"></line>
+            <line x1="48" y1="-28" x2="90" y2="-52"></line>
+            <line x1="56" y1="0" x2="104" y2="0"></line>
+            <line x1="48" y1="28" x2="90" y2="52"></line>
+            <line x1="28" y1="48" x2="52" y2="90"></line>
+            <line x1="0" y1="56" x2="0" y2="104"></line>
+            <line x1="-28" y1="48" x2="-52" y2="90"></line>
+            <line x1="-48" y1="28" x2="-90" y2="52"></line>
+            <line x1="-56" y1="0" x2="-104" y2="0"></line>
+            <line x1="-48" y1="-28" x2="-90" y2="-52"></line>
+            <line x1="-28" y1="-48" x2="-52" y2="-90"></line>
+          </g>
+          <g class="diwali-firework__sparks">
+            <circle cx="0" cy="-124" r="3"></circle>
+            <circle cx="88" cy="-88" r="2.5"></circle>
+            <circle cx="124" cy="0" r="3"></circle>
+            <circle cx="88" cy="88" r="2.5"></circle>
+            <circle cx="0" cy="124" r="3"></circle>
+            <circle cx="-88" cy="88" r="2.5"></circle>
+            <circle cx="-124" cy="0" r="3"></circle>
+            <circle cx="-88" cy="-88" r="2.5"></circle>
+          </g>
+        </g>
+      </defs>
+
+      <g transform="translate(680 150) scale(.78)">
+        <g class="diwali-firework diwali-firework--one">
+          <use href="#diwali-firework-burst"></use>
+        </g>
+      </g>
+      <g transform="translate(1280 650) scale(.72)">
+        <g class="diwali-firework diwali-firework--two">
+          <use href="#diwali-firework-burst"></use>
+        </g>
+      </g>
+      <g transform="translate(130 690) scale(.58)">
+        <g class="diwali-firework diwali-firework--three">
+          <use href="#diwali-firework-burst"></use>
+        </g>
+      </g>
+    </svg>
+
+    <img
+      class="diwali-hero__mark"
+      src="{{ 'n2d-circle-ivory.svg' | asset_url }}"
+      width="496"
+      height="496"
+      alt=""
+    >
+
+    <div class="diwali-shell diwali-hero__inner">
+      <div class="diwali-hero__copy">
+        <h1 id="diwali-title"><span>Diwali</span><em>Sale.</em></h1>
+        <p class="diwali-hero__dates">
+          <span>October 17</span><i>to</i><span>November 15</span>
+        </p>
+        <p class="diwali-hero__lead">
+          The season's most considered prices, across printed stories, plain essentials,
+          women's fits and matching family looks.
+        </p>
+
+        <div class="diwali-countdown" data-diwali-countdown aria-live="polite">
+          <p class="diwali-countdown__phase" data-diwali-phase>Sale ends November 15</p>
+          <div class="diwali-countdown__units" aria-label="Time remaining">
+            <span><b data-countdown-days>00</b><small>Days</small></span>
+            <span><b data-countdown-hours>00</b><small>Hours</small></span>
+            <span><b data-countdown-minutes>00</b><small>Minutes</small></span>
+            <span><b data-countdown-seconds>00</b><small>Seconds</small></span>
+          </div>
+        </div>
+
+        <div class="diwali-actions">
+          <a class="button diwali-button" href="/pages/mens-collection">Shop men's collection</a>
+          <a class="button diwali-button" href="/pages/womens-collection">
+            Shop women's collection
+          </a>
+        </div>
+      </div>
+
+      <div class="diwali-carousel" data-diwali-carousel aria-label="Diwali collections">
+        <div class="diwali-carousel__viewport" aria-live="off">
+          <a
+            class="diwali-carousel__slide is-active"
+            href="/pages/mens-collection"
+            data-carousel-slide
+            aria-hidden="false"
+          >
+            <img
+              src="{{ 'garment-02-regular-burgundy-worn.webp' | asset_url }}"
+              width="1122"
+              height="1402"
+              loading="eager"
+              alt="Man wearing an N2D Regular Printed Tee"
+            >
+            <span class="diwali-carousel__shade"></span>
+            <span class="diwali-carousel__copy">
+              <strong>Men's Diwali edit.</strong>
+              <span>Printed tees from <b>₹549</b> <s>₹699</s> <small>21% off</small></span>
+              <em>Shop men</em>
+            </span>
+          </a>
+
+          <a
+            class="diwali-carousel__slide"
+            href="/pages/womens-collection?view=womens-regular-tees"
+            data-carousel-slide
+            aria-hidden="true"
+            tabindex="-1"
+          >
+            <img
+              src="{{ 'women-ladies-new-n01.webp' | asset_url }}"
+              width="1024"
+              height="1536"
+              loading="eager"
+              alt="Woman wearing an N2D Regular Printed Tee"
+            >
+            <span class="diwali-carousel__shade"></span>
+            <span class="diwali-carousel__copy">
+              <strong>Women's festival fits.</strong>
+              <span>Regular Printed <b>₹449</b> <s>₹649</s> <small>31% off</small></span>
+              <em>Shop women</em>
+            </span>
+          </a>
+
+          <a
+            class="diwali-carousel__slide"
+            href="/pages/family-combos"
+            data-carousel-slide
+            aria-hidden="true"
+            tabindex="-1"
+          >
+            <img
+              src="{{ 'family-royal-portrait.webp' | asset_url }}"
+              width="1200"
+              height="1500"
+              loading="eager"
+              alt="Family wearing coordinated N2D King, Queen, Prince and Princess T-shirts"
+            >
+            <span class="diwali-carousel__shade"></span>
+            <span class="diwali-carousel__copy">
+              <strong>One look. The whole family.</strong>
+              <span>Family sets from <b>₹1,399</b> <s>₹2,097</s> <small>33% off</small></span>
+              <em>Build a family set</em>
+            </span>
+          </a>
+        </div>
+
+        <button
+          class="diwali-carousel__toggle"
+          type="button"
+          data-carousel-toggle
+          aria-label="Pause automatic carousel"
+        >
+          <svg class="diwali-carousel__pause-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 6v12M15 6v12"/>
+          </svg>
+          <svg class="diwali-carousel__play-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m9 6 9 6-9 6Z"/>
+          </svg>
+        </button>
+
+        <div class="diwali-carousel__controls">
+          <button type="button" data-carousel-previous aria-label="Previous collection">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+          </button>
+          <div class="diwali-carousel__dots" role="group" aria-label="Choose collection">
+            <button class="is-active" type="button" data-carousel-dot aria-current="true" aria-label="Show Men"></button>
+            <button type="button" data-carousel-dot aria-current="false" aria-label="Show Women"></button>
+            <button type="button" data-carousel-dot aria-current="false" aria-label="Show Family"></button>
+          </div>
+          <button type="button" data-carousel-next aria-label="Next collection">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="diwali-fit-pair diwali-fit-pair--women diwali-feature--women" aria-labelledby="diwali-women-title">
+    <div class="diwali-shell">
+      <h2 id="diwali-women-title">Women's fits,<br>festival prices.</h2>
+      <p class="diwali-fit-pair__intro">Choose Printed Regular, Crop Top or Plain Essential. Tap the look to shop it.</p>
+
+      <div class="diwali-fit-pair__grid">
+        <a class="diwali-fit" href="/pages/womens-collection?view=womens-regular-tees">
+          <div class="diwali-fit__image">
+            <img src="{{ 'women-ladies-new-n01.webp' | asset_url }}" width="1024" height="1536" loading="eager" alt="Woman wearing an N2D printed Regular Tee">
+          </div>
+          <div class="diwali-fit__copy">
+            <h3>Regular Printed</h3>
+            <p><strong>₹449</strong><s>₹649</s><span>31% off</span></p>
+          </div>
+        </a>
+
+        <a class="diwali-fit" href="/collections/crop-tops">
+          <div class="diwali-fit__image">
+            <img src="{{ 'crop-c05-sunset-passage.webp' | asset_url }}" width="1024" height="1536" loading="eager" alt="Woman wearing an N2D Crop Top">
+          </div>
+          <div class="diwali-fit__copy">
+            <h3>Crop Tops</h3>
+            <p><strong>₹449</strong><s>₹649</s><span>31% off</span></p>
+          </div>
+        </a>
+
+        <a class="diwali-fit" href="/pages/womens-plain-essentials">
+          <div class="diwali-fit__image">
+            <img src="{{ 'women-plain-model-card.webp' | asset_url }}" width="1024" height="1280" loading="eager" alt="Woman wearing an N2D Plain Essential Tee">
+          </div>
+          <div class="diwali-fit__copy">
+            <h3>Plain Essential</h3>
+            <p><strong>₹449</strong><s>₹549</s><span>18% off</span></p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="diwali-feature diwali-feature--family" aria-labelledby="diwali-family-title">
+    <div class="diwali-shell diwali-feature__grid">
+      <div class="diwali-feature__copy">
+        <h2 id="diwali-family-title">One look.<br>The whole family.</h2>
+        <p>
+          Choose a shared colour, pick each size and add the complete matching set in one step.
+          The offer applies automatically in the bag.
+        </p>
+        <dl class="diwali-price-list">
+          <div>
+            <dt>Family Set of 3</dt>
+            <dd><strong>₹1,399</strong><s>₹2,097</s><span>33% off</span></dd>
+          </div>
+          <div>
+            <dt>Family Set of 4</dt>
+            <dd><strong>₹1,799</strong><s>₹2,796</s><span>36% off</span></dd>
+          </div>
+        </dl>
+        <a class="button diwali-button" href="/pages/family-combos">Build your family set</a>
+      </div>
+
+      <a
+        class="diwali-feature__media"
+        href="/pages/family-combos"
+        aria-label="Build an N2D family matching set"
+      >
+        <img
+          src="{{ 'family-royal-portrait.webp' | asset_url }}"
+          width="1200"
+          height="1500"
+          loading="lazy"
+          alt="Family wearing coordinated N2D King, Queen, Prince and Princess T-shirts"
+        >
+        <span class="diwali-feature__badge">Sets from ₹1,399</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="diwali-fit-pair diwali-fit-pair--men" aria-labelledby="diwali-men-title">
+    <div class="diwali-shell">
+      <h2 id="diwali-men-title">Printed stories or plain essentials.</h2>
+      <p class="diwali-fit-pair__intro">Choose the mood. The sale price is already applied.</p>
+
+      <div class="diwali-fit-pair__grid">
+        <a class="diwali-fit" href="/collections/regular">
+          <div class="diwali-fit__image">
+            <img src="{{ 'garment-02-regular-burgundy-worn.webp' | asset_url }}" width="1122" height="1402" loading="lazy" alt="Man wearing an N2D Regular Printed Tee">
+          </div>
+          <div class="diwali-fit__copy">
+            <h3>Regular Printed</h3>
+            <p><strong>₹549</strong><s>₹699</s><span>21% off</span></p>
+          </div>
+        </a>
+
+        <a class="diwali-fit" href="/collections/oversized">
+          <div class="diwali-fit__image">
+            <img src="{{ 'garment-02-oversized-burgundy-worn.webp' | asset_url }}" width="1122" height="1402" loading="lazy" alt="Man wearing an N2D Oversized Printed Tee">
+          </div>
+          <div class="diwali-fit__copy">
+            <h3>Oversized Printed</h3>
+            <p><strong>₹649</strong><s>₹799</s><span>19% off</span></p>
+          </div>
+        </a>
+
+        <a class="diwali-fit" href="/pages/mens-plain-essentials">
+          <div class="diwali-fit__image"><img src="{{ 'plain-regular-model.webp' | asset_url }}" width="1122" height="1402" loading="lazy" alt="Man wearing an N2D Plain Essential Tee"></div>
+          <div class="diwali-fit__copy"><h3>Plain Essential</h3><p><strong>₹449</strong><s>₹549</s><span>18% off</span></p></div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="diwali-closing" aria-labelledby="diwali-closing-title">
+    <div class="diwali-shell diwali-closing__inner">
+      <div>
+        <h2 id="diwali-closing-title">The prices end.<br>The stories stay.</h2>
+        <p data-diwali-closing-copy>Diwali Sale ends November 15.</p>
+      </div>
+      <div class="diwali-actions diwali-closing__actions">
+        <a class="button diwali-button" href="/pages/mens-collection">Shop men's collection</a>
+        <a class="button diwali-button" href="/pages/womens-collection">Shop women's collection</a>
+        <a class="button diwali-button" href="/pages/family-combos">Shop family sets</a>
+      </div>
+    </div>
+  </section>
+
+  <nav class="diwali-sticky-cta" data-diwali-sticky aria-label="Shop Diwali collections">
+    <a href="/pages/mens-collection">Men</a>
+    <a href="/pages/womens-collection">Women</a>
+    <a href="/pages/family-combos">Family</a>
+  </nav>
+</div>
+
+<script src="{{ 'diwali-sale.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "N2D Diwali Sale",
+  "settings": [],
+  "presets": [
+    {
+      "name": "N2D Diwali Sale"
+    }
+  ]
+}
+{% endschema %}

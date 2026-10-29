@@ -1,0 +1,168 @@
+<section class="hero hero-media"><img class="hero-bg" src="{{ 'hero-lifestyle.webp' | asset_url }}" alt="Models wearing N2D tees — front and back artwork" width="1024" height="682"><div class="hero-scrim" aria-hidden="true"></div><div class="hero-copy"><div class="eyebrow">{{ section.settings.eyebrow | escape }}</div><h1>ART YOU <em class="hero-accent">LIVE&nbsp;IN.</em></h1><p>{{ section.settings.text | escape }}</p><div class="button-row">{% assign regular_url = '/collections/regular' %}{% if settings.regular_collection != blank %}{% assign regular_url = settings.regular_collection.url %}{% endif %}{% assign oversized_url = '/collections/oversized' %}{% if settings.oversized_collection != blank %}{% assign oversized_url = settings.oversized_collection.url %}{% endif %}<a class="button" href="{{ regular_url }}">Shop Regular <span aria-hidden="true">↗</span></a><a class="button outline" href="{{ oversized_url }}">Shop Oversized <span aria-hidden="true">↗</span></a></div></div><div class="image-caption"><span>Regular / front artwork</span><span>Oversized / back artwork</span></div></section><div class="fit-strip"><a class="fit-mini" href="{{ regular_url }}"><img src="{{ 'fit-thumb-regular.webp' | asset_url }}" alt="" width="64" height="64"><div><h3>Regular</h3><p>Classic fit. Front artwork.</p></div><span class="fit-mini-arrow" aria-hidden="true">↗</span></a><a class="fit-mini" href="{{ oversized_url }}"><img src="{{ 'fit-thumb-oversized.webp' | asset_url }}" alt="" width="64" height="64"><div><h3>Oversized</h3><p>Relaxed fit. Back artwork.</p></div><span class="fit-mini-arrow" aria-hidden="true">↗</span></a></div><div class="hero-strip"><span>India-inspired artwork. Your everyday canvas.</span><a class="line-link" href="{{ settings.story_url | default: '/pages/our-story' }}">Our story <span aria-hidden="true">↗</span></a></div>
+{% schema %}{
+  "name": "N2D hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "N2D / The everyday collection"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Art you live in."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Familiar places. Unexpected detail. Find a piece that feels like you."
+    },
+    {
+      "type": "select",
+      "id": "studio_design",
+      "label": "Featured studio design",
+      "default": "1",
+      "options": [
+        {
+          "value": "1",
+          "label": "Steam Locomotive"
+        },
+        {
+          "value": "2",
+          "label": "Folk Dancer"
+        },
+        {
+          "value": "3",
+          "label": "Flower Vespa"
+        },
+        {
+          "value": "4",
+          "label": "Stadium Nights"
+        },
+        {
+          "value": "5",
+          "label": "Monsoon Chai"
+        },
+        {
+          "value": "6",
+          "label": "Gramophone"
+        },
+        {
+          "value": "7",
+          "label": "Crossroads"
+        },
+        {
+          "value": "8",
+          "label": "Pack Light"
+        },
+        {
+          "value": "9",
+          "label": "Beach Bench"
+        },
+        {
+          "value": "10",
+          "label": "Midnight Raiders"
+        },
+        {
+          "value": "11",
+          "label": "Meter Podu"
+        },
+        {
+          "value": "12",
+          "label": "Degree Coffee"
+        },
+        {
+          "value": "13",
+          "label": "Vetri Pathai"
+        },
+        {
+          "value": "14",
+          "label": "Low Battery"
+        },
+        {
+          "value": "15",
+          "label": "No Rush Racing Club"
+        },
+        {
+          "value": "16",
+          "label": "Chai Then We Talk"
+        },
+        {
+          "value": "17",
+          "label": "Full Time Relaxer"
+        },
+        {
+          "value": "18",
+          "label": "Kolam"
+        },
+        {
+          "value": "19",
+          "label": "Marina"
+        },
+        {
+          "value": "20",
+          "label": "Northbound"
+        },
+        {
+          "value": "21",
+          "label": "Tidal Geometry"
+        },
+        {
+          "value": "22",
+          "label": "River Grid"
+        },
+        {
+          "value": "23",
+          "label": "Salt Moon"
+        },
+        {
+          "value": "24",
+          "label": "Night Platform"
+        },
+        {
+          "value": "25",
+          "label": "After Rain Ride"
+        },
+        {
+          "value": "26",
+          "label": "Floodlit Cricket"
+        },
+        {
+          "value": "27",
+          "label": "Chai Monsoon"
+        }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero artwork"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image description",
+      "default": "N2D artwork"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Artwork caption",
+      "default": "Steam Locomotive"
+    },
+    {
+      "type": "text",
+      "id": "status_caption",
+      "label": "Artwork status caption",
+      "default": "Garment mockup"
+    }
+  ],
+  "presets": [
+    {
+      "name": "N2D hero"
+    }
+  ]
+}{% endschema %}

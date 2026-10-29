@@ -1,0 +1,8 @@
+{%- assign palette_names = 'White|Black|Royal Blue|Red|Golden Yellow|Melange Grey|Charcoal Grey|Sky Blue|Navy Blue|Olive Green|Light Pink|Coffee Brown|Mustard Yellow|Liril Green|Butter Yellow|Maroon|Orange|Iris Lavender|Burgundy|Almond|Silver Frost|Smoke Blue|Chocolate Brown|Surf Blue|Pastel Dusty|Ivory|Purple' | split: '|' -%}
+<div class="media-thumbs" aria-label="T-shirt colour photographs">
+{%- for photo_colour in palette_names -%}
+  {%- capture photo_url -%}{%- render 'n2d-regular-colour-image', handle: product.handle, colour: photo_colour -%}{%- endcapture -%}
+  {%- assign photo_url = photo_url | strip -%}
+  <button class="media-thumb" type="button" data-media-colour="{{ photo_colour | escape }}" data-media-src="{{ photo_url }}" data-media-target="ProductImage-{{ section_id }}" data-media-alt="{{ product.title | escape }} in {{ photo_colour | escape }}" aria-label="View {{ photo_colour | escape }}" aria-pressed="{% if photo_colour == selected_colour %}true{% else %}false{% endif %}"><img src="{{ photo_url }}" alt="{{ photo_colour | escape }}" loading="lazy" width="112" height="140"></button>
+{%- endfor -%}
+</div>
