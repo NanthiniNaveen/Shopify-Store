@@ -1,0 +1,25 @@
+{% assign dhoni_tee = all_products['dhoni-clean-cutout-regular'] %}
+{% assign bumrah_tee = all_products['bumrah-blue-brush-regular'] %}
+{% if dhoni_tee != blank or bumrah_tee != blank %}
+  {{ 'n2d-cricket-feature.css' | asset_url | stylesheet_tag }}
+  <section class="cricket-feature" aria-labelledby="cricket-feature-title">
+    <div class="diwali-shell">
+      <header class="cricket-feature__heading">
+        <div>
+          <p class="eyebrow">For the love of the game</p>
+          <h2 id="cricket-feature-title">Moments worth wearing.</h2>
+          <p>Two cricket stories. Two ways to wear them.</p>
+        </div>
+        <a class="button button-ghost" href="{{ routes.collections_url }}/regular?design=cricket">Explore cricket</a>
+      </header>
+      <div class="cricket-feature__products">
+        {% if dhoni_tee != blank %}
+          {% render 'n2d-product-card', product: dhoni_tee %}
+        {% endif %}
+        {% if bumrah_tee != blank %}
+          {% render 'n2d-product-card', product: bumrah_tee %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
